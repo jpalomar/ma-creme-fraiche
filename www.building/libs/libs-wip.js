@@ -38671,7 +38671,7 @@ String.prototype.repeat = function(num) {
     $("select[name='herolist']").selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
 
     // Tooltips
-    // $("[data-toggle=tooltip]").bsTooltip("show");
+    $("[data-toggle=tooltip]").bsTooltip("show");
 
     // Tags Input
     $(".tagsinput").tagsInput();

@@ -2,6 +2,17 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8300",
   "files" : {
+    "\/src\/coffee\/mcf.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/src\/coffee\/mcf.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/assets\/libs\/mcf-wip.js",
+      "fileType" : 64
+    },
     "\/assets\/img\/glyphicons-halflings.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -13,17 +24,6 @@
       "initialSize" : 12799,
       "fileType" : 8192
     },
-    "\/assets\/libs\/libs-wip.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/libs\/libs-wip.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/assets\/libs\/libs-wip-wip.js",
-      "fileType" : 64
-    },
     "\/assets\/css\/app.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -32,29 +32,6 @@
       "inputAbbreviatedPath" : "\/assets\/css\/app.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/assets\/libs\/mcf.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/libs\/mcf.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/assets\/libs\/mcf-wip.js",
-      "fileType" : 64
-    },
-    "\/src\/sass\/app.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 1,
-      "inputAbbreviatedPath" : "\/src\/sass\/app.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/assets\/css\/app.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/404.html" : {
       "ignoreWasSetByUser" : 0,
@@ -74,28 +51,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/assets\/img\/glyphicons-halflings-white.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/img\/glyphicons-halflings-white.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/assets\/img\/glyphicons-halflings-white.png",
-      "initialSize" : 8777,
-      "fileType" : 8192
-    },
-    "\/src\/coffee\/mcf.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/src\/coffee\/mcf.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/assets\/libs\/mcf-wip.js",
-      "fileType" : 64
-    },
     "\/src\/coffee\/libs.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -107,6 +62,30 @@
       "outputAbbreviatedPath" : "\/assets\/libs\/libs-wip.js",
       "fileType" : 64
     },
+    "\/src\/less\/theme-01.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/src\/less\/theme-01.less",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/assets\/css\/theme-01.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
+    "\/assets\/img\/glyphicons-halflings-white.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/img\/glyphicons-halflings-white.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/assets\/img\/glyphicons-halflings-white.png",
+      "initialSize" : 8777,
+      "fileType" : 8192
+    },
     "\/assets\/libs\/modernizr-2.6.2.min.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -117,6 +96,58 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/assets\/libs\/modernizr-2.6.2.min-wip.js",
       "fileType" : 64
+    },
+    "\/theme-test.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/theme-test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/assets\/css\/theme-01.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/css\/theme-01.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/assets\/libs\/mcf.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/libs\/mcf.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/assets\/libs\/mcf-wip.js",
+      "fileType" : 64
+    },
+    "\/assets\/libs\/libs-wip.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/libs\/libs-wip.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/assets\/libs\/libs-wip-wip.js",
+      "fileType" : 64
+    },
+    "\/src\/sass\/app.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 1,
+      "inputAbbreviatedPath" : "\/src\/sass\/app.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/assets\/css\/app.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     }
   },
   "manualImportLinks" : [
@@ -145,7 +176,7 @@
     "autoSyncProjectSettingsFile" : 1,
     "lessAutoOutputPathReplace1" : "less",
     "jadeAutoOutputPathReplace1" : "",
-    "lessAutoOutputPathRelativePath" : "..\/css",
+    "lessAutoOutputPathRelativePath" : "..\/..\/assets\/css",
     "hamlAutoOutputPathRelativePath" : "",
     "jsCheckerReservedNamesString" : "console,d3,$",
     "javascriptOutputStyle" : 0,
