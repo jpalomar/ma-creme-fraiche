@@ -1,0 +1,99 @@
+@mixin button-effect($bg:$primary-color){
+  $dark-bg: darken($bg, 5%);
+  $darker-bg: darken($bg, 10%);
+  $darkest-bg: darken($bg, 13%);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color:$dark-bg !important;
+  border-width:2px;
+  @include background(linear-gradient($bg, $bg 5%, $dark-bg));
+  &:hover,
+  &:focus{
+    background-color: $bg;
+    @include background(linear-gradient($bg, $bg));
+    // @include opacity(0.95);
+    box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.1);
+    border-color:$darker-bg !important;
+    @include transition(0.25s);
+  }
+
+  &:active{
+    background-color: $darker-bg;
+    @include background(linear-gradient($darker-bg, $darker-bg));
+    // @include opacity(0.95);
+    box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.1);
+    border-color:$darkest-bg !important;
+    @include transition(0.25s);
+  }
+
+  box-shadow: 0 1px 0 rgba( 255, 255, 255, 0) inset;
+}
+
+.btn {
+  @include button-effect($silver);
+}
+
+a,
+button,
+input[type="submit"]{
+
+  &.btn-primary {
+    @include button-effect($belize-hole);
+  }
+
+  &.btn-secondary {
+    @include button-effect($clouds);
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  &.btn-success{
+    @include button-effect($neo-green);
+  }
+
+  &.btn-alert{
+   @include button-effect($alizarin);
+  }
+
+  &.btn-info{
+   @include button-effect($neo-blue);
+  }
+
+  &.btn-warning{
+   @include button-effect($neo-orange);
+  }
+
+  &.btn-danger{
+   @include button-effect($neo-purple);
+ }
+
+  &.btn-highlight{
+   @include button-effect($amethyst);
+  }
+
+  &.btn-inverse{
+   @include button-effect($wet-asphalt);
+  }
+
+  &.disabled,
+  &[disabled]{
+    cursor: default;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    background: $dark-clouds;
+    color: $silver;
+    &:hover,
+    &:focus,
+    &:active{
+      @include transition(0);
+      background: $dark-clouds;
+      text-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+}
+
+
+
+
+
