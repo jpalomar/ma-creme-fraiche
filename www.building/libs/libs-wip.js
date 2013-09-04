@@ -1,6 +1,6 @@
 
 // jQuery and its plugins
-// @codekit-append "jquery-1.10.1.js";
+// @codekit-append "jquery-1.10.2.js";
 // @codekit-append "jquery-lazyload-1.8.4.js";
 // @codekit-append "jquery-placeholder-2.0.7.js";
 // @codekit-append "jquery-tagsinput-1.3.3.js";
@@ -9877,7 +9877,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
         function update() {
             var counter = 0;
-      
+
             elements.each(function() {
                 var $this = $(this);
                 if (settings.skip_invisible && !$this.is(":visible")) {
@@ -9903,11 +9903,11 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
         if(options) {
             /* Maintain BC for a couple of versions. */
             if (undefined !== options.failurelimit) {
-                options.failure_limit = options.failurelimit; 
+                options.failure_limit = options.failurelimit;
                 delete options.failurelimit;
             }
             if (undefined !== options.effectspeed) {
-                options.effect_speed = options.effectspeed; 
+                options.effect_speed = options.effectspeed;
                 delete options.effectspeed;
             }
 
@@ -9976,7 +9976,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
         $window.bind("resize", function(event) {
             update();
         });
-              
+
         /* With IOS5 force loading images when navigating with back button. */
         /* Non optimal workaround. */
         if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
@@ -9993,7 +9993,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
         $(window).load(function() {
             update();
         });
-        
+
         return this;
     };
 
@@ -10002,7 +10002,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
     $.belowthefold = function(element, settings) {
         var fold;
-        
+
         if (settings.container === undefined || settings.container === window) {
             fold = $window.height() + $window.scrollTop();
         } else {
@@ -10011,7 +10011,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
         return fold <= $(element).offset().top - settings.threshold;
     };
-    
+
     $.rightoffold = function(element, settings) {
         var fold;
 
@@ -10023,10 +10023,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
         return fold <= $(element).offset().left - settings.threshold;
     };
-        
+
     $.abovethetop = function(element, settings) {
         var fold;
-        
+
         if (settings.container === undefined || settings.container === window) {
             fold = $window.scrollTop();
         } else {
@@ -10035,10 +10035,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
         return fold >= $(element).offset().top + settings.threshold  + $(element).height();
     };
-    
+
     $.leftofbegin = function(element, settings) {
         var fold;
-        
+
         if (settings.container === undefined || settings.container === window) {
             fold = $window.scrollLeft();
         } else {
@@ -10241,12 +10241,12 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 /*
 
 	jQuery Tags Input Plugin 1.3.3
-	
+
 	Copyright (c) 2011 XOXCO, Inc
-	
+
 	Documentation for this plugin lives here:
 	http://xoxco.com/clickable/jquery-tags-input
-	
+
 	Licensed under the MIT license:
 	http://www.opensource.org/licenses/mit-license.php
 
@@ -10264,9 +10264,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 	        val = '',
 	        input = $(this),
 	        testSubject = $('#'+$(this).data('tester_id'));
-	
+
 	    if (val === (val = input.val())) {return;}
-	
+
 	    // Enter new content into testSubject
 	    var escaped = val.replace(/&/g, '&amp;').replace(/\s/g,' ').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	    testSubject.html(escaped);
@@ -10276,7 +10276,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 	        currentWidth = input.width(),
 	        isValidWidthChange = (newWidth < currentWidth && newWidth >= minWidth)
 	                             || (newWidth > minWidth && newWidth < maxWidth);
-	
+
 	    // Animate width
 	    if (isValidWidthChange) {
 	        input.width(newWidth);
@@ -10312,19 +10312,19 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     input.data('tester_id', testerId);
     input.css('width', minWidth);
   };
-  
+
 	$.fn.addTag = function(value,options) {
 			options = jQuery.extend({focus:false,callback:true},options);
-			this.each(function() { 
+			this.each(function() {
 				var id = $(this).attr('id');
 
 				var tagslist = $(this).val().split(delimiter[id]);
-				if (tagslist[0] == '') { 
+				if (tagslist[0] == '') {
 					tagslist = new Array();
 				}
 
 				value = jQuery.trim(value);
-		
+
 				if (options.unique) {
 					var skipTag = $(this).tagExist(value);
 					if(skipTag == true) {
@@ -10332,10 +10332,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     				    $('#'+id+'_tag').addClass('not_valid');
     				}
 				} else {
-					var skipTag = false; 
+					var skipTag = false;
 				}
-				
-				if (value !='' && skipTag != true) { 
+
+				if (value !='' && skipTag != true) {
                     $('<span>').addClass('tag').append(
                         $('<span>').text(value).append('&nbsp;&nbsp;'),
                         $('<a class="tagsinput-remove-link">', {
@@ -10348,16 +10348,16 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
                     ).insertBefore('#' + id + '_addTag');
 
 					tagslist.push(value);
-				
+
 					$('#'+id+'_tag').val('');
 					if (options.focus) {
 						$('#'+id+'_tag').focus();
-					} else {		
+					} else {
 						$('#'+id+'_tag').blur();
 					}
-					
+
 					$.fn.tagsInput.updateTagsField(this,tagslist);
-					
+
 					if (options.callback && tags_callbacks[id] && tags_callbacks[id]['onAddTag']) {
 						var f = tags_callbacks[id]['onAddTag'];
 						f.call(this, value);
@@ -10367,29 +10367,29 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 						var i = tagslist.length;
 						var f = tags_callbacks[id]['onChange'];
 						f.call(this, $(this), tagslist[i-1]);
-					}					
+					}
 				}
-		
-			});		
-			
+
+			});
+
 			return false;
 		};
-		
-	$.fn.removeTag = function(value) { 
+
+	$.fn.removeTag = function(value) {
 			value = unescape(value);
-			this.each(function() { 
+			this.each(function() {
 				var id = $(this).attr('id');
-	
+
 				var old = $(this).val().split(delimiter[id]);
-					
+
 				$('#'+id+'_tagsinput .tag').remove();
 				str = '';
-				for (i=0; i< old.length; i++) { 
-					if (old[i]!=value) { 
+				for (i=0; i< old.length; i++) {
+					if (old[i]!=value) {
 						str = str + delimiter[id] +old[i];
 					}
 				}
-				
+
 				$.fn.tagsInput.importTags(this,str);
 
 				if (tags_callbacks[id] && tags_callbacks[id]['onRemoveTag']) {
@@ -10397,24 +10397,24 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 					f.call(this, value);
 				}
 			});
-					
+
 			return false;
 		};
-	
+
 	$.fn.tagExist = function(val) {
 		var id = $(this).attr('id');
 		var tagslist = $(this).val().split(delimiter[id]);
 		return (jQuery.inArray(val, tagslist) >= 0); //true when tag exists, false when not
 	};
-	
+
 	// clear all existing tags and import new ones from a string
 	$.fn.importTags = function(str) {
                 id = $(this).attr('id');
 		$('#'+id+'_tagsinput .tag').remove();
 		$.fn.tagsInput.importTags(this,str);
 	}
-		
-	$.fn.tagsInput = function(options) { 
+
+	$.fn.tagsInput = function(options) {
     var settings = jQuery.extend({
       interactive:true,
       defaultText:'',
@@ -10432,15 +10432,15 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
       inputPadding: 6*2
     },options);
 
-		this.each(function() { 
-			if (settings.hide) { 
-				$(this).hide();				
+		this.each(function() {
+			if (settings.hide) {
+				$(this).hide();
 			}
 			var id = $(this).attr('id');
 			if (!id || delimiter[$(this).attr('id')]) {
 				id = $(this).attr('id', 'tags' + new Date().getTime()).attr('id');
 			}
-			
+
 			var data = jQuery.extend({
 				pid:id,
 				real_input: '#'+id,
@@ -10448,56 +10448,56 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 				input_wrapper: '#'+id+'_addTag',
 				fake_input: '#'+id+'_tag'
 			},settings);
-	
+
 			delimiter[id] = data.delimiter;
-			
+
 			if (settings.onAddTag || settings.onRemoveTag || settings.onChange) {
 				tags_callbacks[id] = new Array();
 				tags_callbacks[id]['onAddTag'] = settings.onAddTag;
 				tags_callbacks[id]['onRemoveTag'] = settings.onRemoveTag;
 				tags_callbacks[id]['onChange'] = settings.onChange;
 			}
-	
+
             var containerClass = $('#'+id).attr('class').replace('tagsinput', '');
 			var markup = '<div id="'+id+'_tagsinput" class="tagsinput '+containerClass+'"><div class="tagsinput-add-container" id="'+id+'_addTag"><div class="tagsinput-add"></div>';
-			
+
 			if (settings.interactive) {
 				markup = markup + '<input id="'+id+'_tag" value="" data-default="'+settings.defaultText+'" />';
 			}
-			
+
 			markup = markup + '</div></div>';
-			
+
 			$(markup).insertAfter(this);
 
 			$(data.holder).css('width',settings.width);
 			$(data.holder).css('min-height',settings.height);
 			$(data.holder).css('height','100%');
-	
-			if ($(data.real_input).val()!='') { 
+
+			if ($(data.real_input).val()!='') {
 				$.fn.tagsInput.importTags($(data.real_input),$(data.real_input).val());
-			}		
-			if (settings.interactive) { 
+			}
+			if (settings.interactive) {
 				$(data.fake_input).val($(data.fake_input).attr('data-default'));
 				$(data.fake_input).css('color',settings.placeholderColor);
 		        $(data.fake_input).resetAutosize(settings);
-		
+
 				$(data.holder).bind('click',data,function(event) {
 					$(event.data.fake_input).focus();
 				});
-			
+
 				$(data.fake_input).bind('focus',data,function(event) {
-					if ($(event.data.fake_input).val()==$(event.data.fake_input).attr('data-default')) { 
+					if ($(event.data.fake_input).val()==$(event.data.fake_input).attr('data-default')) {
 						$(event.data.fake_input).val('');
 					}
-					$(event.data.fake_input).css('color','#000000');		
+					$(event.data.fake_input).css('color','#000000');
 				});
-						
+
 				if (settings.autocomplete_url != undefined) {
 					autocomplete_options = {source: settings.autocomplete_url};
-					for (attrname in settings.autocomplete) { 
-						autocomplete_options[attrname] = settings.autocomplete[attrname]; 
+					for (attrname in settings.autocomplete) {
+						autocomplete_options[attrname] = settings.autocomplete[attrname];
 					}
-				
+
 					if (jQuery.Autocompleter !== undefined) {
 						$(data.fake_input).autocomplete(settings.autocomplete_url, settings.autocomplete);
 						$(data.fake_input).bind('result',data,function(event,data,formatted) {
@@ -10512,14 +10512,14 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 							return false;
 						});
 					}
-				
-					
+
+
 				} else {
 						// if a user tabs out of the field, create a new tag
 						// this is only available if autocomplete is not used.
-						$(data.fake_input).bind('blur',data,function(event) { 
+						$(data.fake_input).bind('blur',data,function(event) {
 							var d = $(this).attr('data-default');
-							if ($(event.data.fake_input).val()!='' && $(event.data.fake_input).val()!=d) { 
+							if ($(event.data.fake_input).val()!='' && $(event.data.fake_input).val()!=d) {
 								if( (event.data.minChars <= $(event.data.fake_input).val().length) && (!event.data.maxChars || (event.data.maxChars >= $(event.data.fake_input).val().length)) )
 									$(event.data.real_input).addTag($(event.data.fake_input).val(),{focus:true,unique:(settings.unique)});
 							} else {
@@ -10528,7 +10528,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 							}
 							return false;
 						});
-				
+
 				}
 				// if user types a comma, create a new tag
 				$(data.fake_input).bind('keypress',data,function(event) {
@@ -10540,7 +10540,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 						return false;
 					} else if (event.data.autosize) {
 			            $(event.data.fake_input).doAutosize(settings);
-            
+
           			}
 				});
 				//Delete last tag on backspace
@@ -10557,7 +10557,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 					}
 				});
 				$(data.fake_input).blur();
-				
+
 				//Removes the not_valid class when user changes the value of the fake input
 				if(data.unique) {
 				    $(data.fake_input).keydown(function(event){
@@ -10568,21 +10568,21 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 				}
 			} // if settings.interactive
 		});
-			
+
 		return this;
-	
+
 	};
-	
-	$.fn.tagsInput.updateTagsField = function(obj,tagslist) { 
+
+	$.fn.tagsInput.updateTagsField = function(obj,tagslist) {
 		var id = $(obj).attr('id');
 		$(obj).val(tagslist.join(delimiter[id]));
 	};
-	
-	$.fn.tagsInput.importTags = function(obj,val) {			
+
+	$.fn.tagsInput.importTags = function(obj,val) {
 		$(obj).val('');
 		var id = $(obj).attr('id');
 		var tags = val.split(delimiter[id]);
-		for (i=0; i<tags.length; i++) { 
+		for (i=0; i<tags.length; i++) {
 			$(obj).addTag(tags[i],{focus:false,callback:false});
 		}
 		if(tags_callbacks[id] && tags_callbacks[id]['onChange'])
@@ -28315,12 +28315,12 @@ $.effects.effect.transfer = function( o, done ) {
                         if ($(this)[0].index != 0) {
                             _liA.push(
                                 '<div class="divider"></div>'+
-                                '<dt>'+label+'</dt>'+ 
+                                '<dt>'+label+'</dt>'+
                                 _this.createA(text, "opt " + optionClass )
                                 );
                         } else {
                             _liA.push(
-                                '<dt>'+label+'</dt>'+ 
+                                '<dt>'+label+'</dt>'+
                                 _this.createA(text, "opt " + optionClass ));
                         }
                     } else {
@@ -28382,27 +28382,27 @@ $.effects.effect.transfer = function( o, done ) {
                 }
             }).toArray();
 
-            //Convert all the values into a comma delimited string    
+            //Convert all the values into a comma delimited string
             var title = selectedItems.join(", ");
 
-            //If this is multi select, and the selectText type is count, the show 1 of 2 selected etc..                    
+            //If this is multi select, and the selectText type is count, the show 1 of 2 selected etc..
             if(_this.multiple && _this.options.selectedTextFormat.indexOf('count') > -1) {
                 var max = _this.options.selectedTextFormat.split(">");
                 if( (max.length>1 && selectedItems.length > max[1]) || (max.length==1 && selectedItems.length>=2)) {
                     title = selectedItems.length +' of ' + this.$element.find('option').length + ' selected';
                 }
-             }  
-            
+             }
+
             //If we dont have a title, then use the default, or if nothing is set at all, use the not selected text
             if(!title) {
-                title = _this.options.title != undefined ? _this.options.title : _this.options.noneSelectedText;    
+                title = _this.options.title != undefined ? _this.options.title : _this.options.noneSelectedText;
             }
-            
+
             this.$element.next('.select').find('.filter-option').html( title );
 	    },
-	    
-        
-        
+
+
+
         setSelected:function(index, selected) {
             if(selected) {
                 this.$newElement.find('li').eq(index).addClass('selected');
@@ -28410,7 +28410,7 @@ $.effects.effect.transfer = function( o, done ) {
                 this.$newElement.find('li').eq(index).removeClass('selected');
             }
         },
-        
+
         setDisabled:function(index, disabled) {
             if(disabled) {
                 this.$newElement.find('li').eq(index).addClass('disabled');
@@ -28418,7 +28418,7 @@ $.effects.effect.transfer = function( o, done ) {
                 this.$newElement.find('li').eq(index).removeClass('disabled');
             }
         },
-       
+
         checkDisabled: function() {
             if (this.$element.is(':disabled')) {
                 this.button.addClass('disabled');
@@ -28427,53 +28427,53 @@ $.effects.effect.transfer = function( o, done ) {
                 });
             }
         },
-		
+
 		checkTabIndex: function() {
 			if (this.$element.is('[tabindex]')) {
 				var tabindex = this.$element.attr("tabindex");
 				this.button.attr('tabindex', tabindex);
 			}
 		},
-		
+
 		clickListener: function() {
             var _this = this;
-            
+
             $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-            
-           
-            
+
+
+
             this.$newElement.on('click', 'li a', function(e){
                 var clickedIndex = $(this).parent().index(),
                     $this = $(this).parent(),
                     $select = $this.parents('.select');
-                
-                
-                //Dont close on multi choice menu    
+
+
+                //Dont close on multi choice menu
                 if(_this.multiple) {
                     e.stopPropagation();
                 }
-                
+
                 e.preventDefault();
-                
+
                 //Dont run if we have been disabled
                 if ($select.prev('select').not(':disabled') && !$(this).parent().hasClass('disabled')){
                     //Deselect all others if not multi select box
                     if (!_this.multiple) {
                         $select.prev('select').find('option').removeAttr('selected');
                         $select.prev('select').find('option').eq(clickedIndex).prop('selected', true).attr('selected', 'selected');
-                    } 
+                    }
                     //Else toggle the one we have chosen if we are multi selet.
                     else {
                         var selected = $select.prev('select').find('option').eq(clickedIndex).prop('selected');
-                        
+
                         if(selected) {
                             $select.prev('select').find('option').eq(clickedIndex).removeAttr('selected');
                         } else {
                             $select.prev('select').find('option').eq(clickedIndex).prop('selected', true).attr('selected', 'selected');
                         }
                     }
-                    
-                    
+
+
                     $select.find('.filter-option').html($this.text());
                     $select.find('button').focus();
 
@@ -28482,7 +28482,7 @@ $.effects.effect.transfer = function( o, done ) {
                 }
 
             });
-            
+
            this.$newElement.on('click', 'li.disabled a, li dt, li .divider', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -28494,12 +28494,12 @@ $.effects.effect.transfer = function( o, done ) {
                 _this.render();
             });
         },
-        
+
         val:function(value) {
-            
+
             if(value!=undefined) {
                 this.$element.val( value );
-                
+
                 this.$element.trigger('change');
                 return this.$element;
             } else {
@@ -28517,7 +28517,7 @@ $.effects.effect.transfer = function( o, done ) {
             var $this = $(this),
                 data = $this.data('selectpicker'),
                 options = typeof option == 'object' && option;
-            
+
             if (!data) {
             	$this.data('selectpicker', (data = new Selectpicker(this, options, event)));
             } else {
@@ -28525,7 +28525,7 @@ $.effects.effect.transfer = function( o, done ) {
             		data[i]=option[i];
             	}
             }
-            
+
             if (typeof option == 'string') {
                 //Copy the value of option, as once we shift the arguments
                 //it also shifts the value of option.
@@ -28538,12 +28538,12 @@ $.effects.effect.transfer = function( o, done ) {
                 }
             }
         });
-        
+
         if(value!=undefined) {
             return value;
         } else {
             return chain;
-        } 
+        }
     };
 
     $.fn.selectpicker.defaults = {
@@ -31686,7 +31686,7 @@ d3 = function() {
   d3.xhr = d3_xhrType(d3_identity);
   function d3_xhrType(response) {
     return function(url, mimeType, callback) {
-      if (arguments.length === 2 && typeof mimeType === "function") callback = mimeType, 
+      if (arguments.length === 2 && typeof mimeType === "function") callback = mimeType,
       mimeType = null;
       return d3_xhr(url, mimeType, response, callback);
     };
@@ -32063,7 +32063,7 @@ d3 = function() {
   if (d3_format_grouping) {
     var d3_format_groupingLength = d3_format_grouping.length;
     d3_format_group = function(value) {
-      var i = value.lastIndexOf("."), f = i >= 0 ? "." + value.substring(i + 1) : (i = value.length, 
+      var i = value.lastIndexOf("."), f = i >= 0 ? "." + value.substring(i + 1) : (i = value.length,
       ""), t = [], j = 0, g = d3_format_grouping[0];
       while (i > 0 && g > 0) {
         t.push(value.substring(i -= g, i + g));
@@ -32164,7 +32164,7 @@ d3 = function() {
     var λ00, φ00, λ0, cosφ0, sinφ0;
     d3_geo_area.point = function(λ, φ) {
       d3_geo_area.point = nextPoint;
-      λ0 = (λ00 = λ) * d3_radians, cosφ0 = Math.cos(φ = (φ00 = φ) * d3_radians / 2 + π / 4), 
+      λ0 = (λ00 = λ) * d3_radians, cosφ0 = Math.cos(φ = (φ00 = φ) * d3_radians / 2 + π / 4),
       sinφ0 = Math.sin(φ);
     };
     function nextPoint(λ, φ) {
@@ -33981,7 +33981,7 @@ d3 = function() {
     return points.length < 4 ? d3_svg_lineLinear(points) : points[1] + d3_svg_lineHermite(points.slice(1, points.length - 1), d3_svg_lineCardinalTangents(points, tension));
   }
   function d3_svg_lineCardinalClosed(points, tension) {
-    return points.length < 3 ? d3_svg_lineLinear(points) : points[0] + d3_svg_lineHermite((points.push(points[0]), 
+    return points.length < 3 ? d3_svg_lineLinear(points) : points[0] + d3_svg_lineHermite((points.push(points[0]),
     points), d3_svg_lineCardinalTangents([ points[points.length - 2] ].concat(points, [ points[1] ]), tension));
   }
   function d3_svg_lineCardinal(points, tension) {
@@ -34149,7 +34149,7 @@ d3 = function() {
     function hull(data) {
       if (data.length < 3) return [];
       var fx = d3_functor(x), fy = d3_functor(y), n = data.length, vertices, plen = n - 1, points = [], stack = [], d, i, j, h = 0, x1, y1, x2, y2, u, v, a, sp;
-      if (fx === d3_svg_lineX && y === d3_svg_lineY) vertices = data; else for (i = 0, 
+      if (fx === d3_svg_lineX && y === d3_svg_lineY) vertices = data; else for (i = 0,
       vertices = []; i < n; ++i) {
         vertices.push([ +fx.call(this, d = data[i], i), +fy.call(this, d, i) ]);
       }
@@ -34310,7 +34310,7 @@ d3 = function() {
       var points, polygons = data.map(function() {
         return [];
       }), fx = d3_functor(x), fy = d3_functor(y), d, i, n = data.length, Z = 1e6;
-      if (fx === d3_svg_lineX && fy === d3_svg_lineY) points = data; else for (points = [], 
+      if (fx === d3_svg_lineX && fy === d3_svg_lineY) points = data; else for (points = [],
       i = 0; i < n; ++i) {
         points.push([ +fx.call(this, d = data[i], i), +fy.call(this, d, i) ]);
       }
@@ -36477,7 +36477,7 @@ d3 = function() {
         return d3_layout_treemapPad(node, x);
       }
       var type;
-      pad = (padding = x) == null ? d3_layout_treemapPadNull : (type = typeof x) === "function" ? padFunction : type === "number" ? (x = [ x, x, x, x ], 
+      pad = (padding = x) == null ? d3_layout_treemapPadNull : (type = typeof x) === "function" ? padFunction : type === "number" ? (x = [ x, x, x, x ],
       padConstant) : padConstant;
       return treemap;
     };
@@ -36696,7 +36696,7 @@ d3 = function() {
     };
     scale.domain = function(x) {
       if (!arguments.length) return domain;
-      if (x[0] < 0) log = d3_scale_logn, pow = d3_scale_pown; else log = d3_scale_logp, 
+      if (x[0] < 0) log = d3_scale_logn, pow = d3_scale_pown; else log = d3_scale_logp,
       pow = d3_scale_powp;
       linear.domain((domain = x.map(Number)).map(log));
       return scale;
@@ -36730,7 +36730,7 @@ d3 = function() {
     scale.tickFormat = function(n, format) {
       if (arguments.length < 2) format = d3_scale_logFormat;
       if (!arguments.length) return format;
-      var b = Math.log(base), k = Math.max(.1, n / scale.ticks().length), f = log === d3_scale_logn ? (e = -1e-12, 
+      var b = Math.log(base), k = Math.max(.1, n / scale.ticks().length), f = log === d3_scale_logn ? (e = -1e-12,
       Math.floor) : (e = 1e-12, Math.ceil), e;
       return function(d) {
         return d / pow(b * f(log(d) / b + e)) <= k ? format(d) : "";
@@ -37029,7 +37029,7 @@ d3 = function() {
   d3.svg.arc = function() {
     var innerRadius = d3_svg_arcInnerRadius, outerRadius = d3_svg_arcOuterRadius, startAngle = d3_svg_arcStartAngle, endAngle = d3_svg_arcEndAngle;
     function arc() {
-      var r0 = innerRadius.apply(this, arguments), r1 = outerRadius.apply(this, arguments), a0 = startAngle.apply(this, arguments) + d3_svg_arcOffset, a1 = endAngle.apply(this, arguments) + d3_svg_arcOffset, da = (a1 < a0 && (da = a0, 
+      var r0 = innerRadius.apply(this, arguments), r1 = outerRadius.apply(this, arguments), a0 = startAngle.apply(this, arguments) + d3_svg_arcOffset, a1 = endAngle.apply(this, arguments) + d3_svg_arcOffset, da = (a1 < a0 && (da = a0,
       a0 = a1, a1 = da), a1 - a0), df = da < π ? "0" : "1", c0 = Math.cos(a0), s0 = Math.sin(a0), c1 = Math.cos(a1), s1 = Math.sin(a1);
       return da >= d3_svg_arcMax ? r0 ? "M0," + r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + -r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + r1 + "M0," + r0 + "A" + r0 + "," + r0 + " 0 1,0 0," + -r0 + "A" + r0 + "," + r0 + " 0 1,0 0," + r0 + "Z" : "M0," + r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + -r1 + "A" + r1 + "," + r1 + " 0 1,1 0," + r1 + "Z" : r0 ? "M" + r1 * c0 + "," + r1 * s0 + "A" + r1 + "," + r1 + " 0 " + df + ",1 " + r1 * c1 + "," + r1 * s1 + "L" + r0 * c1 + "," + r0 * s1 + "A" + r0 + "," + r0 + " 0 " + df + ",0 " + r0 * c0 + "," + r0 * s0 + "Z" : "M" + r1 * c0 + "," + r1 * s0 + "A" + r1 + "," + r1 + " 0 " + df + ",1 " + r1 * c1 + "," + r1 * s1 + "L0,0" + "Z";
     }
@@ -37623,7 +37623,7 @@ d3 = function() {
         var ticks = tickValues == null ? scale.ticks ? scale.ticks.apply(scale, tickArguments_) : scale.domain() : tickValues, tickFormat = tickFormat_ == null ? scale.tickFormat ? scale.tickFormat.apply(scale, tickArguments_) : String : tickFormat_;
         var subticks = d3_svg_axisSubdivide(scale, ticks, tickSubdivide), subtick = g.selectAll(".tick.minor").data(subticks, String), subtickEnter = subtick.enter().insert("line", ".tick").attr("class", "tick minor").style("opacity", 1e-6), subtickExit = d3.transition(subtick.exit()).style("opacity", 1e-6).remove(), subtickUpdate = d3.transition(subtick).style("opacity", 1);
         var tick = g.selectAll(".tick.major").data(ticks, String), tickEnter = tick.enter().insert("g", "path").attr("class", "tick major").style("opacity", 1e-6), tickExit = d3.transition(tick.exit()).style("opacity", 1e-6).remove(), tickUpdate = d3.transition(tick).style("opacity", 1), tickTransform;
-        var range = d3_scaleRange(scale), path = g.selectAll(".domain").data([ 0 ]), pathUpdate = (path.enter().append("path").attr("class", "domain"), 
+        var range = d3_scaleRange(scale), path = g.selectAll(".domain").data([ 0 ]), pathUpdate = (path.enter().append("path").attr("class", "domain"),
         d3.transition(path));
         var scale1 = scale.copy(), scale0 = this.__chart__ || scale1;
         this.__chart__ = scale1;
