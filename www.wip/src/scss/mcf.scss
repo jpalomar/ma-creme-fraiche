@@ -1,5 +1,15 @@
+
+// sass lib
+// requires bourbon.io import lib
 @import 'bourbon';
 
-@import 'mcf-vars';
+// resets
+@import 'normalize-3.0.0';
+@import 'h5bp-4.3.0';
+
+// mcf-ishs
+@import 'mcf-stripped-bootstrap';
+@import 'mcf-general';
+@import 'mcf-nav';
 
 /*! * tout pour vous */
