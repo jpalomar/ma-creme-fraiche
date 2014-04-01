@@ -4,734 +4,1107 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage} - {SearchQuery}{/block:SearchPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="apple-touch-icon" href="{PortraitURL-128}" />
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        {block:Description}
-        <meta name="description" content="{MetaDescription}" />
-        {/block:Description}
-        <meta charset="utf-8">
-        {block:PostSummary}
-        <meta property="og:title" content="{PostSummary} - {Name}" />
-        {/block:PostSummary}
+    <title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage} - {SearchQuery}{/block:SearchPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-        <meta property="og:site_name" content="{Title}"/>
-        {block:IndexPage}
-        <meta property="og:title" content="{Title}"/>
-        <meta property="og:type" content="blog"/>
-        <meta property="og:description" content="{MetaDescription}"/>
-        <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:IndexPage}
-        {block:PermalinkPage}
-        <meta property="og:url" content="{Permalink}"/>
-        <meta property="og:type" content="article"/>
-        {block:Posts}
-        {block:Text}
-        {block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
-        <meta property="og:description" content="{PlaintextBody}"/>
-        {/block:Text}
-        {block:Photo}
-        <meta property="og:image" content="{PhotoURL-500}"/>
-        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-        {/block:Photo}
-        {block:Photoset}
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+
+    {block:PostSummary}
+    <meta property="og:title" content="{PostSummary} - {Name}" />
+    {/block:PostSummary}
+
+    <meta property="og:site_name" content="{Title}"/>
+
+    {block:IndexPage}
+    <meta property="og:title" content="{Title}"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:description" content="{MetaDescription}"/>
+    <meta property="og:image" content="{PortraitURL-128}"/>
+    {/block:IndexPage}
+
+    {block:PermalinkPage}
+    <meta property="og:url" content="{Permalink}"/>
+    <meta property="og:type" content="article"/>
+    {block:Posts}
+
+    {block:Text}
+    {block:Title}
+    <meta property="og:title" content="{PlaintextTitle}"/>
+    {/block:Title}
+    <meta property="og:description" content="{PlaintextBody}"/>
+    {/block:Text}
+
+    {block:Photo}
+    <meta property="og:image" content="{PhotoURL-500}"/>
+        {block:Caption}
+        <meta property="og:description" content="{PlaintextCaption}"/>
+        {/block:Caption}
+    {/block:Photo}
+
+    {block:Photoset}
         {block:Photos}
         <meta property="og:image" content="{PhotoURL-500}"/>
         {/block:Photos}
-        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-        {/block:Photoset}
-        {block:Quote}
-        <meta property="og:title" content="{PlaintextQuote}"/>
-        <meta property="og:description" content="{PlaintextSource}"/>
-        <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:Quote}
-        {block:Link}
-        <meta property="og:title" content="{PlaintextName}"/>
-        <meta property="og:description" content="{PlaintextDescription}"/>
-        <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:Link}
-        {block:Chat}
-        <meta property="og:title" content="{PlaintextTitle}"/>
-        <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
-        <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:Chat}
-        {block:Audio}
-        <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+        {block:Caption}
         <meta property="og:description" content="{PlaintextCaption}"/>
-        {block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
-        {/block:Audio}
-        {block:Video}
-        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
-        {/block:Video}
-        {block:Answer}
-        <meta property="og:title" content="{PlaintextQuestion}"/>
-        <meta property="og:description" content="{PlaintextAnswer}"/>
-        <meta property="og:image" content="{PortraitURL-128}"/>
-        {/block:Answer}
-        {/block:Posts}
-        {/block:PermalinkPage}
+        {/block:Caption}
+    {/block:Photoset}
+
+    {block:Quote}
+    <meta property="og:title" content="{PlaintextQuote}"/>
+    <meta property="og:description" content="{PlaintextSource}"/>
+    <meta property="og:image" content="{PortraitURL-128}"/>
+    {/block:Quote}
+
+    {block:Link}
+    <meta property="og:title" content="{PlaintextName}"/>
+    <meta property="og:description" content="{PlaintextDescription}"/>
+    <meta property="og:image" content="{PortraitURL-128}"/>
+    {/block:Link}
+
+    {block:Chat}
+    <meta property="og:title" content="{PlaintextTitle}"/>
+    <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+    <meta property="og:image" content="{PortraitURL-128}"/>
+    {/block:Chat}
+
+    {block:Audio}
+    <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+    <meta property="og:description" content="{PlaintextCaption}"/>
+        {block:AlbumArt}
+        <meta property="og:image" content="{AlbumArtURL}"/>
+        {/block:AlbumArt}
+    {/block:Audio}
+
+    {block:Video}
+        {block:Caption}
+        <meta property="og:description" content="{PlaintextCaption}"/>
+        {/block:Caption}
+    {/block:Video}
+
+    {block:Answer}
+    <meta property="og:title" content="{PlaintextQuestion}"/>
+    <meta property="og:description" content="{PlaintextAnswer}"/>
+    <meta property="og:image" content="{PortraitURL-128}"/>
+    {/block:Answer}
+
+    {/block:Posts}
+    {/block:PermalinkPage}
+
     <meta name="text:Social Heading" content=""/>
     <meta name="text:Contact Heading" content=""/>
-      <meta name="text:Contact Address" content=""/>
-      <meta name="text:Contact Phone" content=""/>
-      <meta name="text:Contact Email" content=""/>
+    <meta name="text:Contact Address" content=""/>
+    <meta name="text:Contact Phone" content=""/>
+    <meta name="text:Contact Email" content=""/>
     <meta name="text:Facebook Username" content=""/>
     <meta name="text:Dribbble Username" content=""/>
     <meta name="text:TWitter Username" content=""/>
-      <meta name="color:Header Color" content="#1abc9c">
-      <meta name="color:Box Color" content="#f2f2f2">
-      <meta name="color:Alternate Color" content="#f2f2f2">
-      <meta name="color:Footer Color" content="#2f2f2f">
-              <meta name="text:Disqus shortname" content="">
-        <meta name="text:Google analytics ID" content="">
+    <meta name="color:Header Color" content="#1abc9c">
+    <meta name="color:Box Color" content="#f2f2f2">
+    <meta name="color:Alternate Color" content="#f2f2f2">
+    <meta name="color:Footer Color" content="#2f2f2f">
+    <meta name="text:Disqus shortname" content="">
+    <meta name="text:Google analytics ID" content="">
 
-  <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+    <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
 
     <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+    /*
+     * Author: Carlos Alvarez
+     * URL: http://alvarez.is
+     *
+     * Project Name: STANLEY - Free Bootstrap 3 Theme
+     * Version: 1.0
+     * URL: http://blacktie.co
+     */
 
-    <!-- Custom styles for this template -->
+    @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+    body {
+        background-color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #555;
+        -webkit-font-smoothing: antialiased;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* Titles */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: #333;
+    }
+    h1 {
+        font-size: 35px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    /* Paragraph & Typographic */
+    p {
+        line-height: 28px;
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+    .centered { text-align: center }
+    /* Links */
+    a {
+        color: #1abc9c;
+        word-wrap: break-word;
+        -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+        -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+        -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+        -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+        transition: color 0.1s ease-in, background 0.1s ease-in;
+    }
+    a:hover,
+    a:focus {
+        color: #7b7b7b;
+        text-decoration: none;
+        outline: 0;
+    }
+    a:before,
+    a:after {
+        -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+        -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+        -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+        -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+        transition: color 0.1s ease-in, background 0.1s ease-in;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+    .navbar {
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+    .navbar-inverse {
+        padding-bottom: 70px;
+        padding-top: 70px;
+    }
+    .navbar-inverse {
+        background-color: #1abc9c;
+        border-color: #16a085;
+    }
+    .navbar-inverse .navbar-nav > li > a { color: white }
+    .navbar-inverse .navbar-nav > li > a:hover { color: #222222 }
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    .navbar-inverse .navbar-brand { color: white }
+    .navbar-inverse .navbar-toggle { border-color: transparent }
+    .progress-bar-theme { background-color: #1abc9c }
+    /* Helpers */
+    .mt {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .pt {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    /* +++++ WRAP SECTIONS +++++ */
+    #ww {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        background-color: {color:Box Color}; /*#f2f2f2;*/
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://static.tumblr.com/m7jbopv/qLbn0rsw8/hover.zoom.js"></script>
-    <script src="http://static.tumblr.com/m7jbopv/GKpn0rsvo/hover.zoom.conf.js"></script>
-<style>
-/*
- * Author: Carlos Alvarez
- * URL: http://alvarez.is
- *
- * Project Name: STANLEY - Free Bootstrap 3 Theme
- * Version: 1.0
- * URL: http://blacktie.co
- */
+    }
+    #footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-color: {color:Footer Color}; /*#2f2f2f;*/
+    }
+    #footer p { color: white }
+    #footer h4 {
+        color: white;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+    }
+    /* +++++ Color Wraps / Blog Page +++++ */
+    .grey {
+        padding-top: 60px;
+        padding-bottom: 0px;
+        background-color: {color:Alternate Color}; /*#f2f2f2;*/
+    }
+    .white {
+        padding-top: 60px;
+        padding-bottom: 0px;
+        background-color: #ffffff;
+    }
+    /* Blog Date*/
+    bd {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #d2d2d2;
+        font-weight: 700;
+    }
+    /* Blog Author*/
+    ba {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    /* Blog Quote */
+    .bq {
+        font-size: 22px;
+        padding-top: 30px;
+    }
+    /* Blog Tags */
+    bt { font-size: 12px }
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-body {
-  	background-color: #ffffff;
-  	font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #555;
-
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Titles */
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #333;
-}
-
-h1 {
-	font-size: 35px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-
-
-/* Paragraph & Typographic */
-p {
-    line-height: 28px;
-    margin-bottom: 25px;
-    font-size: 16px;
-}
-
-.centered {
-    text-align: center;
-}
-
-/* Links */
-a {
-    color: #1abc9c;
-    word-wrap: break-word;
-
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
-a:hover,
-a:focus {
-    color: #7b7b7b;
-    text-decoration: none;
-    outline: 0;
-}
-
-a:before,
-a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
- hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-
-.navbar {
-	text-transform: uppercase;
-	margin-bottom: 0px;
-}
-
-.navbar-inverse {
-	padding-bottom: 70px;
-	padding-top: 70px;
-}
-
-.navbar-inverse {
-	background-color: {color:Header Color};/* #1abc9c;*/
-	border-color: #16a085;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-	color: white;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover {
-	color: #222222;
-}
-
-.navbar-brand {
-	font-weight: 700;
-	font-size: 20px;
-	letter-spacing: 2px;
-}
-
-.navbar-inverse .navbar-brand {
-	color: white;
-}
-
-.navbar-inverse .navbar-toggle {
-	border-color: transparent;
-}
-
-.progress-bar-theme {
-  background-color: #1abc9c;
-}
-
-
-/* Helpers */
-
-.mt {
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-
-.pt {
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-
-/* +++++ WRAP SECTIONS +++++ */
-
-#ww {
-	padding-top: 70px;
-	padding-bottom: 70px;
-	background-color:{color:Box Color}; /*#f2f2f2;*/
-}
-
-
-#footer {
-	background-color: {color:Footer Color}; /*#2f2f2f;*/
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-#footer p {
-	color: white;
-}
-
-#footer h4 {
-	color: white;
-	text-transform: uppercase;
-	padding-bottom: 20px;
-}
-
-
-/* +++++ Color Wraps / Blog Page +++++ */
-
-.grey {
-	padding-top: 60px;
-	padding-bottom: 0px;
-	background-color: {color:Alternate Color}; /*#f2f2f2;*/
-}
-
-
-.white {
-	padding-top: 60px;
-	padding-bottom: 0px;
-	background-color: #ffffff;
-}
-
-
-
-/* Blog Date*/
-bd {
-	font-size: 12px;
-	text-transform: uppercase;
-	color: #d2d2d2;
-	font-weight: 700;
-}
-
-/* Blog Author*/
-ba {
-	font-size: 12px;
-	text-transform: uppercase;
-}
-
-/* Blog Quote */
-.bq {
-	font-size: 22px;
-	padding-top: 30px;
-}
-
-/* Blog Tags */
-bt {
-	font-size: 12px;
-}
-
-/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
-/* Effects also are controled by hover.zoom.js */
-.zoom {
-    display:block;
-    position:relative;
-    overflow:hidden;
-    background:transparent url(http://static.tumblr.com/m7jbopv/2Kin0rszh/loader.gif) no-repeat center;
-}
-
-    .zoom img { display:none }
-
-        .zoomOverlay {
-            position:absolute;
-            top:0; left:0;
-            bottom:0; right:0;
-            display:none;
-            background-image:url(http://static.tumblr.com/m7jbopv/Ye7n0rt08/zoom.png);
-            background-repeat:no-repeat;
-            background-position:center;
-        }
-
-.zoom2 {
-	opacity: 1;
-}
-
-.zoom2:hover {
-	opacity: 0.5;
-}
-
-/* glyphicon Configuration */
-
-.glyphicon {
-	font-size: 40px;
-	color: #1abc9c;
-}
-ol.notes {
-        list-style:none;
+    /* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
+    /* Effects also are controled by hover.zoom.js */
+    .zoom {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        background: transparent url(http://static.tumblr.com/m7jbopv/2Kin0rszh/loader.gif) no-repeat center;
+    }
+    .zoom img { display: none }
+    .zoomOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: none;
+        background-image: url(http://static.tumblr.com/m7jbopv/Ye7n0rt08/zoom.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .zoom2 { opacity: 1 }
+    .zoom2:hover { opacity: 0.5 }
+    /* glyphicon Configuration */
+    .glyphicon {
+        font-size: 40px;
+        color: #1abc9c;
+    }
+    ol.notes {
+        list-style: none;
         line-height: 2em;
         letter-spacing: 2px;
     }
-ol.notes li img{
+    ol.notes li img {
         padding-right: 4px;
         border-radius: 50%;
-
     }
-{CustomCSS}
-</style>
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-  </head>
-
-  <body>
-
-    <!-- Static navbar -->
-    <div class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">{Title}</a>
+    {CustomCSS}
+    </style>
+    </head>
+    <body>
+        <!-- Static navbar -->
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">{Title}</a>
+                </div>
+                {block:HasPages}
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        {block:Pages}
+                        <li><a href="{URL}">{Label}</a></li>
+                        {/block:Pages}
+                    </ul>
+                </div><!--/.nav-collapse -->
+            {/block:HasPages}
+            </div>
         </div>
-        {block:HasPages}
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-           {block:Pages} <li><a href="{URL}">{Label}</a></li>{/block:Pages}
-          </ul>
-        </div><!--/.nav-collapse -->
-        {/block:HasPages}
-      </div>
-    </div>
 
-	<!-- +++++ Welcome Section +++++ -->
-{block:IndexPage}
-	<div id="ww" class="{block:TagPage}hidden {/block:TagPage}">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
-					<img src="{PortraitURL-128}" alt="Stanley" class="img-circle">
-					<h1>{Title}</h1>
-					<p> {block:Description}
-            <p id="description">{Description}</p>
-        {/block:Description}</p>
+        <!-- +++++ Welcome Section +++++ -->
+        {block:IndexPage}
+        <div id="ww" class="{block:TagPage}hidden {/block:TagPage}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 centered">
+                        <img src="{PortraitURL-128}" alt="[ ma creme fraiche ]" class="img-circle">
+                        <h1>{Title}</h1>
+                        {block:Description}
+                        <p id="description">{Description}</p>
+                        {/block:Description}
+                    </div><!-- /col-lg-8 -->
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /ww -->
+        {/block:IndexPage}
 
-				</div><!-- /col-lg-8 -->
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /ww -->
-{/block:IndexPage}
-{block:TagPage}
-	<div class="grey">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
+        {block:TagPage}
+        <div class="grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2>{Tag}</h2>
+                    </div>
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:TagPage}
 
-                <h2>{Tag}</h2>
-                </div>
+        <!-- +++++ Post +++++ -->
+        {block:Posts}
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-    {/block:TagPage}
-<!-- +++++ Post +++++ -->
-{block:Posts}{block:Text}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{PostAuthorName}</ba></p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<a href="{Permalink}"><h4>{block:Title}{Title}{/block:Title}</h4></a>
-{Body}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+        {block:Text}
+        <div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Text}
-{block:Quote}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<a href="{Permalink}"><h3>{Quote}</h3></a>
-{block:Source}{Source}{/block:Source}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{PostAuthorName}</ba>
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <a href="{Permalink}">
+                            <h4>{block:Title}{Title}{/block:Title}</h4>
+                        </a>
+                        {Body}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Quote}
-{block:Photo}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{PostAuthorName} </ba> {block:ContentSource}via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">{SourceTitle}<ba></ba>{/block:ContentSource}</p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<h4></h4>
-					<p>{block:PermalinkPage}{LinkOpenTag}<img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}{/block:PermalinkPage}
-{block:IndexPage}<a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{/block:IndexPage}
-                    </p>
-{block:Caption}{Caption}{/block:Caption}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Photo}
-{block:Panorama}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{PostAuthorName} </ba> {block:ContentSource}via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">{SourceTitle}<ba></ba>{/block:ContentSource}</p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<h4></h4>
-					<p>{block:PermalinkPage}{LinkOpenTag}<img class="img-responsive" src="{PhotoURL-Panorama}" alt="{PhotoAlt}">{LinkCloseTag}{/block:PermalinkPage}
-{block:IndexPage}<a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{/block:IndexPage}
-                    </p>
-{block:Caption}{Caption}{/block:Caption}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Text}
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Panorama}
-{block:Photoset}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{PostAuthorName}</ba> {block:ContentSource}via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">{SourceTitle}<ba></ba>{/block:ContentSource}</p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<h4></h4>
-					<p>{Photoset}</p>
-{block:Caption}{Caption}{/block:Caption}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+        {block:Quote}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Photoset}
-{block:Video}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{PostAuthorName}</ba> {block:ContentSource}via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">{SourceTitle}<ba></ba>{/block:ContentSource}</p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<h4></h4>
-					<p>{Video-700}</p>
-{block:Caption}{Caption}{/block:Caption}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <a href="{Permalink}">
+                            <h3>{Quote}</h3>
+                        </a>
+                        {block:Source}{Source}{/block:Source}
+                        <br />
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Video}
-{block:Audio}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p>{block:AlbumArt}<img src="{AlbumArtURL}" width="50px" height="50px" class="img-circle">{/block:AlbumArt} <ba>{block:Artist}
-{Artist}
-{/block:Artist}</ba></p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<h4>{block:TrackName}
-{TrackName}{/block:TrackName} {block:Album}from {Album}{/block:Album} </h4>
-					<p>{AudioPlayerBlack}</p>
-{block:Caption}{Caption}{/block:Caption}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Audio}
-{block:Link}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="http://www.google.com/s2/favicons?domain=www.{block:Host}{Host}{/block:Host}" width="16px" height="16px" class="img-circle"> <ba>{block:Host}{Host}{/block:Host}</ba></p>
-<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<a href="{URL}" target="_blank"
-                       ><h4>{Name}</h4></a>
-{block:Description}{Description}{/block:Description}
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Quote}
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Link}
-{block:Chat}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<p><img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{PostAuthorName}</ba> {block:ContentSource}via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">{SourceTitle}<ba></ba>{/block:ContentSource}</p>
-					<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-					<a href="{URL}"><h4>{block:Title}{Title} {/block:Title}</h4></a>
- <dl class="dl-horizontal">
-                            {block:Lines}
+        {block:Photo}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
 
-                                    {block:Label}
-                                        <dt class="{Alt} user_{UserNumber}"><ba>{Label}</ba></dt>
-                                    {/block:Label}<dd>{Line}</dd>
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{PostAuthorName}</ba>
+                            {block:ContentSource}
+                            via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                            {SourceTitle}
+                            <ba></ba>
+                            {/block:ContentSource}
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <h4></h4>
+                        <p>
+                            {block:PermalinkPage}
+                            {LinkOpenTag}
+                            <img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                            {LinkCloseTag}
+                            {/block:PermalinkPage}
+                            {block:IndexPage}
+                            <a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
+                            {/block:IndexPage}
+                        </p>
+                        {block:Caption}{Caption}{/block:Caption}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
 
-                            {/block:Lines}
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Photo}
+
+        {block:Panorama}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{PostAuthorName}</ba>
+
+                            {block:ContentSource}
+                            via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                            {SourceTitle}
+                            <ba></ba>
+                            {/block:ContentSource}
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <h4></h4>
+                        <p>
+                            {block:PermalinkPage}
+                            {LinkOpenTag}
+                            <img class="img-responsive" src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+                            {LinkCloseTag}
+                            {/block:PermalinkPage}
+                            {block:IndexPage}
+                            <a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
+                            {/block:IndexPage}
+                        </p>
+                        {block:Caption}{Caption}{/block:Caption}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
+
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Panorama}
+
+        {block:Photoset}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{PostAuthorName}</ba>
+
+                            {block:ContentSource}
+                            via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                            {SourceTitle}
+                            <ba></ba>
+                            {/block:ContentSource}
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <h4></h4>
+                        <p>{Photoset}</p>
+                        {block:Caption}{Caption}{/block:Caption}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
+
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Photoset}
+
+        {block:Video}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{PostAuthorName}</ba>
+                            {block:ContentSource}
+                            via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                            {SourceTitle}
+                            <ba></ba>
+                            {/block:ContentSource}
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <h4></h4>
+                        <p>{Video-700}</p>
+                        {block:Caption}{Caption}{/block:Caption}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
+
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Video}
+
+        {block:Audio}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            {block:AlbumArt}
+                            <img src="{AlbumArtURL}" width="50px" height="50px" class="img-circle">
+                            {/block:AlbumArt}
+                            <ba>
+                                {block:Artist}
+                                {Artist}
+                                {/block:Artist}
+                            </ba>
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <h4>
+                            {block:TrackName}{TrackName}{/block:TrackName}
+                            {block:Album}from {Album}{/block:Album}
+                        </h4>
+                        <p>{AudioPlayerBlack}</p>
+                        {block:Caption}{Caption}{/block:Caption}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
+
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Audio}
+
+        {block:Link}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="http://www.google.com/s2/favicons?domain=www.{block:Host}{Host}{/block:Host}" width="16px" height="16px" class="img-circle">
+                            <ba>{block:Host}{Host}{/block:Host}</ba>
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <a href="{URL}" target="_blank" ><h4>{Name}</h4></a>
+                        {block:Description}{Description}{/block:Description}
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
+
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Link}
+
+        {block:Chat}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{PostAuthorName}</ba>
+                            {block:ContentSource}
+                            via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                            {SourceTitle}
+                            <ba></ba>
+                            {/block:ContentSource}
+                        </p>
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <a href="{URL}"><h4>{block:Title}{Title}{/block:Title}</h4></a>
+                        <dl class="dl-horizontal">
+                        {block:Lines}
+                            {block:Label}
+                            <dt class="{Alt} user_{UserNumber}"><ba>{Label}</ba></dt>
+                            {/block:Label}
+                            <dd>{Line}</dd>
+                        {/block:Lines}
                         </dl>
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Chat}
-{block:Answer}
-	<div class="{block:Odd} white{/block:Odd} {block:Even} grey{/block:Even} ">
-	    <div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-<p><bd>{block:Date}<a href="{Permalink}">{DayOfMonth}  {Month} {Year} </a>{/block:Date}</bd></p>
-                    <p><img src="{AskerPortraitURL-64}" width="50px" height="50px" class="img-circle"> <ba>{Asker} asked </ba></p>
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Chat}
 
-					<a href="{Permalink}"><h4>{Question}</h4></a>
- <dl class="dl-horizontal">
-  {block:Answerer}
+        {block:Answer}
+        <div class="{block:Odd}white{/block:Odd} {block:Even}grey{/block:Even} ">
+            <div class="container">
+                <div class="row">
 
- <dt><img src="{AnswererPortraitURL-16}" width="16px" height="16px" class="img-circle"><ba>{Answerer}</ba>  </dt>
-                    <dd>{Answer}</dd>
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            <bd>
+                                {block:Date}
+                                <a href="{Permalink}">
+                                {DayOfMonth}  {Month} {Year}
+                                </a>
+                                {/block:Date}
+                            </bd>
+                        </p>
+                        <p>
+                            <img src="{AskerPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                            <ba>{Asker} asked</ba>
+                        </p>
+                        <a href="{Permalink}"><h4>{Question}</h4></a>
+                        <dl class="dl-horizontal">
+                            {block:Answerer}
+                            <dt>
+                                <img src="{AnswererPortraitURL-16}" width="16px" height="16px" class="img-circle">
+                                <ba>{Answerer}</ba>
+                            </dt>
+                            <dd>{Answer}</dd>
+                            {/block:Answerer}
 
-{/block:Answerer}
-<dt><img src="{PostAuthorPortraitURL-16}" width="16px" height="16px" class="img-circle"><ba> <a href="{PostAuthorURL}">{PostAuthorName}</a></ba> </dt>
-<dd>{Replies}</dd>
-</dl>
+                            <dt>
+                                <img src="{PostAuthorPortraitURL-16}" width="16px" height="16px" class="img-circle">
+                                <ba><a href="{PostAuthorURL}">{PostAuthorName}</a></ba>
+                            </dt>
+                            <dd>{Replies}</dd>
+                        </dl>
 
-					<br>
-					<p>{block:HasTags}<bt>TAGS: {block:Tags} <a href="{TagURL}">{Tag}</a>{/block:Tags} </bt>{/block:HasTags} </p>
-					{block:PermalinkPage}<hr>{/block:PermalinkPage}
-                    {block:PermalinkPage}<p><a href="/"># Back</a></p>{/block:PermalinkPage}
-				</div>
+                        <br />
+                        <p>
+                            {block:HasTags}
+                            <bt>
+                                TAGS: {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                            </bt>
+                            {/block:HasTags}
+                        </p>
+                        {block:PermalinkPage}
+                        <hr />
+                        {/block:PermalinkPage}
+                        {block:PermalinkPage}
+                        <p><a href="/"># Back</a></p>
+                        {/block:PermalinkPage}
+                    </div>
 
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:Answer}
-    {block:PermalinkPage}
-	<div class="grey ">
-	    <div class="container">
-			<div class="row">				<div class="col-md-8 col-md-offset-2">
-<h5>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h5>
-{block:PostNotes}{PostNotes-16}{/block:PostNotes}
-{block:Date}
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:Answer}
 
-                                            {block:IfDisqusShortname}
-                                            <section class="comments">
-                                                <div id="disqus_thread"></div>
-                                                <script type="text/javascript">
-                                                  (function() {
-                                                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                                   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
-                                                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                                                  })();
-                                                </script>
-                                                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
-                                                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                                            </section>
-                                            {/block:IfDisqusShortname}
+        {block:PermalinkPage}
+        <div class="grey">
+            <div class="container">
+                <div class="row">
 
-                                        {/block:Date}
-                </div>
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /white -->
-{/block:PermalinkPage}
-{/block:Posts}
+                    <div class="col-md-8 col-md-offset-2">
+                        <h5>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h5>
+                        {block:PostNotes}{PostNotes-16}{/block:PostNotes}
+                        {block:Date}
+                        {block:IfDisqusShortname}
+                        <section class="comments">
+                            <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                              (function() {
+                               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                               dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+                               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                              })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+                            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </section>
+                        {/block:IfDisqusShortname}
+                        {/block:Date}
+                    </div>
 
-	    <div class="container" style="margin-top: 40px;
-margin-bottom: 40px;" >
-			<div class="row">
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div><!-- /white -->
+        {/block:PermalinkPage}
+
+        {/block:Posts}
+
+        <div class="container" style="margin-top: 40px;margin-bottom: 40px;" >
+            <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                 {block:PreviousPage}
                 <a href="{PreviousPage}">&#171; Previous</a>
-            {/block:PreviousPage}{block:NextPage}
+                {/block:PreviousPage}
+
+                {block:NextPage}
                 <a href="{NextPage}">Next &#187;</a>
-            {/block:NextPage}
-                    <hr>
-                </div></div></div>
-	<!-- +++++ Footer Section +++++ -->
+                {/block:NextPage}
+                <hr />
+                </div>
+            </div>
+        </div>
 
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-										{block:IfContactHeading}<h4>{text:Contact Heading}</h4>{/block:IfContactHeading}
-					<p>
-{block:IfContactAddress}{text:Contact Address}<br />{/block:IfContactAddress}
-{block:IfContactPhone}{text:Contact Phone}<br />{/block:IfContactPhone}
-{block:IfContactEmail}{text:Contact Email}<br />{/block:IfContactEmail}
-					</p>
-				</div><!-- /col-lg-4 -->
+        <!-- +++++ Footer Section +++++ -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        {block:IfContactHeading}
+                        <h4>{text:Contact Heading}</h4>
+                        {/block:IfContactHeading}
+                        <p>
+                            {block:IfContactAddress}
+                            {text:Contact Address}<br />
+                            {/block:IfContactAddress}
 
-				<div class="col-lg-4">
-					{block:IfSocialHeading}<h4>{text:Social Heading}</h4>{/block:IfSocialHeading}
-					<p>
-  {block:IfDribbbleUsername}<a href="http://dribbble.com/{text:Dribbble Username}">Dribbble</a><br/>
-{/block:IfDribbbleUsername}
-  {block:IfTwitterUsername}<a href="http://twitter.com/{text:Twitter Username}">Twitter</a><br/>
-{/block:IfTwitterUsername}
-  {block:IfFacebookUsername}<a href="http://facebook.com/{text:Facebook Username}">Facebook</a><br/>
-{/block:IfFacebookUsername}
-					</p>
-				</div><!-- /col-lg-4 -->
+                            {block:IfContactPhone}
+                            {text:Contact Phone}<br />
+                            {/block:IfContactPhone}
 
-				<div class="col-lg-4">
-					<h4>About {Title}</h4>
-{block:Description}
-            <p>{Description}</p>
-        {/block:Description}
-            <p><a style="color:#2f2f2f;" href="http://stanleyr-theme.tumblr.com/">Stanleyr Theme</a></p>
-				</div><!-- /col-lg-4 -->
+                            {block:IfContactEmail}
+                            {text:Contact Email}<br />
+                            {/block:IfContactEmail}
+                        </p>
+                    </div> <!-- /col-lg-4 -->
 
-			</div>
+                    <div class="col-lg-4">
+                        {block:IfSocialHeading}
+                        <h4>{text:Social Heading}</h4>
+                        {/block:IfSocialHeading}
 
-		</div>
-	</div>
+                        <p>
+                            {block:IfDribbbleUsername}
+                            <a href="http://dribbble.com/{text:Dribbble Username}">Dribbble</a><br/>
+                            {/block:IfDribbbleUsername}
 
+                            {block:IfTwitterUsername}
+                            <a href="http://twitter.com/{text:Twitter Username}">Twitter</a><br/>
+                            {/block:IfTwitterUsername}
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-        {block:IfGoogleAnalyticsID}
-            <script>
-              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-              ga('create', '{text:Google Analytics ID}', 'tumblr.com');
-              ga('send', 'pageview');
-            </script>
-        {/block:IfGoogleAnalyticsID}
-</body>
+                            {block:IfFacebookUsername}
+                            <a href="http://facebook.com/{text:Facebook Username}">Facebook</a><br/>
+                            {/block:IfFacebookUsername}
+                        </p>
+                    </div> <!-- /col-lg-4 -->
+
+                    <div class="col-lg-4">
+                        <h4>About {Title}</h4>
+                        {block:Description}
+                        <p>{Description}</p>
+                        {/block:Description}
+                        <p><a style="color:#2f2f2f;" href="http://stanleyr-theme.tumblr.com/">Stanleyr Theme</a></p>
+                    </div><!-- /col-lg-4 -->
+
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /#footer -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" >
+    +function($){
+
+        $.fn.hoverZoom = function( _settings) {
+
+            var settings = $.extend({
+                overlay: true,
+                overlayColor: '#2e9dbd',
+                overlayOpacity: 0.9,
+                zoom: 25,
+                speed: 300
+            }, _settings);
+
+            return this.each(function() {
+
+                var s = settings;
+                var hz = $(this);
+                var image = $('img', hz);
+
+                image.load(function() {
+
+                    if ( s.overlay ) {
+                        $(this).parent().append('<div class="zoomOverlay" />');
+                        $(this).parent().find('.zoomOverlay').css({
+                            opacity: 0,
+                            display: 'block',
+                            backgroundColor: s.overlayColor
+                        });
+                    }
+
+                    var width = $(this).width();
+                    var height = $(this).height();
+
+                    $(this).fadeIn(1000, function() {
+                        $(this).parent().css('background-image', 'none');
+                        hz.hover(function() {
+                            $('img', this).stop().animate({
+                                height: height + s.zoom,
+                                marginLeft: -(s.zoom),
+                                marginTop: -(s.zoom)
+                            }, s.speed);
+                            if (s.overlay === true) {
+                                $(this).parent().find('.zoomOverlay').stop().animate({
+                                    opacity: s.overlayOpacity
+                                }, s.speed);
+                            }
+                        }, function() {
+                            $('img', this).stop().animate({
+                                height: height,
+                                marginLeft: 0,
+                                marginTop: 0
+                            }, s.speed);
+                            if (s.overlay === true) {
+                                $(this).parent().find('.zoomOverlay').stop().animate({
+                                    opacity: 0
+                                }, s.speed);
+                            }
+                        });
+                    });
+                });
+            });
+        };
+    }(jQuery);
+    </script>
+    <script type="text/javascript" >
+    $(function() {
+        $('.blue').hoverZoom({
+            overlayColor: '#3498db',
+            zoom: 0
+        });
+
+        $('.green').hoverZoom({
+            overlayColor: '#1abc9c',
+            zoom: 0
+        });
+
+        $('.pink').hoverZoom({
+            overlayColor: '#bd2e75',
+            zoom: 0
+        });
+
+        $('.black').hoverZoom({
+            overlayColor: '#2f2f2f',
+            zoom: 0
+        });
+
+        $('.alizarin').hoverZoom({
+            overlayColor: '#e74c3c',
+            zoom: 0
+        });
+
+        /* USAGE
+
+        $('#pink').hoverZoom({
+            overlay: true, // false to turn off (default true)
+            overlayColor: '#2e9dbd', // overlay background color
+            overlayOpacity: 0.7, // overlay opacity
+            zoom: 25, // amount to zoom (px)
+            speed: 300 // speed of the hover
+        });
+
+        */
+    });
+    </script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    {block:IfGoogleAnalyticsID}
+    <script type="text/javascript" >
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{text:Google Analytics ID}', 'tumblr.com');
+      ga('send', 'pageview');
+    </script>
+    {/block:IfGoogleAnalyticsID}
+    </body>
 </html>
