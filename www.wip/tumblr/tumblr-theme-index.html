@@ -5,6 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage} - {SearchQuery}{/block:SearchPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+
+	<title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="apple-touch-icon" href="{PortraitURL-128}" />
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -40,18 +43,18 @@
 
 	{block:Photo}
 	<meta property="og:image" content="{PhotoURL-500}"/>
-		{block:Caption}
-		<meta property="og:description" content="{PlaintextCaption}"/>
-		{/block:Caption}
+	{block:Caption}
+	<meta property="og:description" content="{PlaintextCaption}"/>
+	{/block:Caption}
 	{/block:Photo}
 
 	{block:Photoset}
-		{block:Photos}
-		<meta property="og:image" content="{PhotoURL-500}"/>
-		{/block:Photos}
-		{block:Caption}
-		<meta property="og:description" content="{PlaintextCaption}"/>
-		{/block:Caption}
+	{block:Photos}
+	<meta property="og:image" content="{PhotoURL-500}"/>
+	{/block:Photos}
+	{block:Caption}
+	<meta property="og:description" content="{PlaintextCaption}"/>
+	{/block:Caption}
 	{/block:Photoset}
 
 	{block:Quote}
@@ -75,15 +78,15 @@
 	{block:Audio}
 	<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
 	<meta property="og:description" content="{PlaintextCaption}"/>
-		{block:AlbumArt}
-		<meta property="og:image" content="{AlbumArtURL}"/>
-		{/block:AlbumArt}
+	{block:AlbumArt}
+	<meta property="og:image" content="{AlbumArtURL}"/>
+	{/block:AlbumArt}
 	{/block:Audio}
 
 	{block:Video}
-		{block:Caption}
-		<meta property="og:description" content="{PlaintextCaption}"/>
-		{/block:Caption}
+	{block:Caption}
+	<meta property="og:description" content="{PlaintextCaption}"/>
+	{/block:Caption}
 	{/block:Video}
 
 	{block:Answer}
@@ -109,8 +112,6 @@
 	<!-- <meta name="color:Footer Color" content="#2f2f2f"> -->
 	<meta name="text:Disqus shortname" content="">
 	<meta name="text:Google analytics ID" content="UA-97144-8">
-
-	<title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
 	<link rel="stylesheet" href="//macremefraiche.com/assets/css/ionicons.min.css">
@@ -145,610 +146,611 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
-		<div class="push-top clearfix"></div>
 
-		<!-- +++++ Welcome Section +++++ -->
-		{block:IndexPage}
-		<div id="ww" class="{block:TagPage}hidden {/block:TagPage}">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<img src="{PortraitURL-128}" alt="[ ma creme fraiche ]" class="img-circle">
-						<h1>{Title}</h1>
-						{block:Description}
-						<p id="description">{Description}</p>
-						{/block:Description}
-					</div><!-- /col-lg-8 -->
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /ww -->
-		{/block:IndexPage}
+		<div id="id-blog-container">
 
-		{block:TagPage}
-		<div class="tumblr-blog-post bg-tumblr-alt">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<h2>{Tag}</h2>
-					</div>
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:TagPage}
+			<!-- top header  -->
+			{block:IndexPage}
+			<div id="id-top-header" class="{block:TagPage}hidden{/block:TagPage}">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 text-center">
+							<img src="{PortraitURL-128}" alt="[ ma creme fraiche ]" class="img-circle">
+							<h1>{Title}</h1>
+							{block:Description}
+							<p id="description">{Description}</p>
+							{/block:Description}
+						</div><!-- /col-lg-8 -->
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /id-top-header -->
+			{/block:IndexPage}
 
-		<!-- +++++ Post +++++ -->
-		{block:Posts}
-
-		{block:Text}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
-						</p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<a href="{Permalink}">
-							<h4>{block:Title}{Title}{/block:Title}</h4>
-						</a>
-						{Body}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
-
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Text}
-
-		{block:Quote}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<a href="{Permalink}">
-							<h3>{Quote}</h3>
-						</a>
-						{block:Source}{Source}{/block:Source}
-						<br />
-
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
-
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Quote}
-
-		{block:Photo}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
-							{block:ContentSource}
-							via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
-							{SourceTitle}
-							<span class="tumblr-blog-author"></span class="tumblr-blog-author">
-							{/block:ContentSource}
-						</p>
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<h4></h4>
-						<p>
-							{block:PermalinkPage}
-							{LinkOpenTag}
-							<img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-							{LinkCloseTag}
-							{/block:PermalinkPage}
-							{block:IndexPage}
-							<a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
-							{/block:IndexPage}
-						</p>
-						{block:Caption}{Caption}{/block:Caption}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
-
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Photo}
-
-		{block:Panorama}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
-
-							{block:ContentSource}
-							via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
-							{SourceTitle}
-							<span class="tumblr-blog-author"></span class="tumblr-blog-author">
-							{/block:ContentSource}
-						</p>
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<h4></h4>
-						<p>
-							{block:PermalinkPage}
-							{LinkOpenTag}
-							<img class="img-responsive" src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
-							{LinkCloseTag}
-							{/block:PermalinkPage}
-							{block:IndexPage}
-							<a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
-							{/block:IndexPage}
-						</p>
-						{block:Caption}{Caption}{/block:Caption}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
-
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Panorama}
-
-		{block:Photoset}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
-
-							{block:ContentSource}
-							via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
-							{SourceTitle}
-							<span class="tumblr-blog-author"></span class="tumblr-blog-author">
-							{/block:ContentSource}
-						</p>
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<div class="tmblr-photoset">
-						{Photoset}
+			{block:TagPage}
+			<div class="tumblr-blog-post bg-tumblr-alt">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2">
+							<h2>{Tag}</h2>
 						</div>
-						{block:Caption}{Caption}{/block:Caption}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:TagPage}
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Photoset}
+			<!-- +++++ Post +++++ -->
+			{block:Posts}
 
-		{block:Video}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
+			{block:Text}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
-							{block:ContentSource}
-							via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
-							{SourceTitle}
-							<span class="tumblr-blog-author"></span class="tumblr-blog-author">
-							{/block:ContentSource}
-						</p>
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<h4></h4>
-						<p>{Video-700}</p>
-						{block:Caption}{Caption}{/block:Caption}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+							</p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<a href="{Permalink}">
+								<h4>{block:Title}{Title}{/block:Title}</h4>
+							</a>
+							{Body}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Video}
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Text}
 
-		{block:Audio}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
+			{block:Quote}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							{block:AlbumArt}
-							<img src="{AlbumArtURL}" width="50px" height="50px" class="img-circle">
-							{/block:AlbumArt}
-							<span class="tumblr-blog-author">
-								{block:Artist}
-								{Artist}
-								{/block:Artist}
-							</span class="tumblr-blog-author">
-						</p>
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<h4>
-							{block:TrackName}{TrackName}{/block:TrackName}
-							{block:Album}from {Album}{/block:Album}
-						</h4>
-						<p>{AudioPlayerBlack}</p>
-						{block:Caption}{Caption}{/block:Caption}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<a href="{Permalink}">
+								<h3>{Quote}</h3>
+							</a>
+							{block:Source}{Source}{/block:Source}
+							<br />
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Audio}
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
 
-		{block:Link}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Quote}
 
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="http://www.google.com/s2/favicons?domain=www.{block:Host}{Host}{/block:Host}" width="16px" height="16px" class="img-circle">
-							<span class="tumblr-blog-author">{block:Host}{Host}{/block:Host}</span class="tumblr-blog-author">
-						</p>
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<a href="{URL}" target="_blank" ><h4>{Name}</h4></a>
-						{block:Description}{Description}{/block:Description}
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
+			{block:Photo}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Link}
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+								{block:ContentSource}
+								via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+								{SourceTitle}
+								<span class="tumblr-blog-author"></span class="tumblr-blog-author">
+								{/block:ContentSource}
+							</p>
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<h4></h4>
+							<p>
+								{block:PermalinkPage}
+								{LinkOpenTag}
+								<img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+								{LinkCloseTag}
+								{/block:PermalinkPage}
+								{block:IndexPage}
+								<a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
+								{/block:IndexPage}
+							</p>
+							{block:Caption}{Caption}{/block:Caption}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
 
-		{block:Chat}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
-							{block:ContentSource}
-							via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
-							{SourceTitle}
-							<span class="tumblr-blog-author"></span class="tumblr-blog-author">
-							{/block:ContentSource}
-						</p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<a href="{URL}"><h4>{block:Title}{Title}{/block:Title}</h4></a>
-						<dl class="dl-horizontal">
-						{block:Lines}
-							{block:Label}
-							<dt class="{Alt} user_{UserNumber}"><span class="tumblr-blog-author">{Label}</span class="tumblr-blog-author"></dt>
-							{/block:Label}
-							<dd>{Line}</dd>
-						{/block:Lines}
-						</dl>
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">
-								TAGS: {block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Photo}
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Chat}
+			{block:Panorama}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-		{block:Answer}
-		<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
-			<div class="container">
-				<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
 
-					<div class="col-md-8 col-md-offset-2">
-						<p>
-							<div class="tumblr-blog-date">
-								<span class="ion-calendar"></span>
-								{block:Date}
-								<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
-								{/block:Date}
-							</div class="tumblr-blog-date">
-						</p>
-						<p>
-							<img src="{AskerPortraitURL-64}" width="50px" height="50px" class="img-circle">
-							<span class="tumblr-blog-author">{Asker} asked</span class="tumblr-blog-author">
-						</p>
-						<a href="{Permalink}"><h4>{Question}</h4></a>
-						<dl class="dl-horizontal">
-							{block:Answerer}
-							<dt>
-								<img src="{AnswererPortraitURL-16}" width="16px" height="16px" class="img-circle">
-								<span class="tumblr-blog-author">{Answerer}</span class="tumblr-blog-author">
-							</dt>
-							<dd>{Answer}</dd>
-							{/block:Answerer}
+								{block:ContentSource}
+								via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+								{SourceTitle}
+								<span class="tumblr-blog-author"></span class="tumblr-blog-author">
+								{/block:ContentSource}
+							</p>
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<h4></h4>
+							<p>
+								{block:PermalinkPage}
+								{LinkOpenTag}
+								<img class="img-responsive" src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+								{LinkCloseTag}
+								{/block:PermalinkPage}
+								{block:IndexPage}
+								<a href="{Permalink}"><img class="img-responsive" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>
+								{/block:IndexPage}
+							</p>
+							{block:Caption}{Caption}{/block:Caption}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
 
-							<dt>
-								<img src="{PostAuthorPortraitURL-16}" width="16px" height="16px" class="img-circle">
-								<span class="tumblr-blog-author"><a href="{PostAuthorURL}">{PostAuthorName}</a></span class="tumblr-blog-author">
-							</dt>
-							<dd>{Replies}</dd>
-						</dl>
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Panorama}
 
-						<br />
-						<p>
-							{block:HasTags}
-							<div class="tumblr-blog-tags">TAGS:
-								{block:Tags}
-								<a href="{TagURL}">{Tag}</a>
-								{/block:Tags}
-							</div class="tumblr-blog-tags">
-							{/block:HasTags}
-						</p>
+			{block:Photoset}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-						{block:PermalinkPage}
-						<hr />
-						<ul class="pager">
-							<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
-						</ul>
-						{/block:PermalinkPage}
-					</div>
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:Answer}
+								{block:ContentSource}
+								via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+								{SourceTitle}
+								<span class="tumblr-blog-author"></span class="tumblr-blog-author">
+								{/block:ContentSource}
+							</p>
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<div class="tmblr-photoset">
+							{Photoset}
+							</div>
+							{block:Caption}{Caption}{/block:Caption}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
 
-		{block:PermalinkPage}
-		<div class="tumblr-blog-post bg-tumblr-alt ">
-			<div class="container">
-				<div class="row">
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Photoset}
 
-					<div class="col-md-8 col-md-offset-2">
-						<h5>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h5>
-						{block:PostNotes}
-							{PostNotes-16}
-						{/block:PostNotes}
-						{block:Date}
-						{block:IfDisqusShortname}
-						<section class="comments">
-							<div id="disqus_thread"></div>
-							<script type="text/javascript">
-							  (function() {
-							   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-							   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
-							   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-							  })();
-							</script>
-							<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
-							<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-						</section>
-						{/block:IfDisqusShortname}
-						{/block:Date}
-					</div>
+			{block:Video}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-				</div><!-- /row -->
-			</div> <!-- /container -->
-		</div><!-- /white -->
-		{/block:PermalinkPage}
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+								{block:ContentSource}
+								via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+								{SourceTitle}
+								<span class="tumblr-blog-author"></span class="tumblr-blog-author">
+								{/block:ContentSource}
+							</p>
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<h4></h4>
+							<p>{Video-700}</p>
+							{block:Caption}{Caption}{/block:Caption}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
 
-		{/block:Posts}
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Video}
 
-		<!-- +++++ NO JS +++++ -->
-		<div class="jumbotron hidden no-js-message">
-			<div class="container">
-				<h1 class="text-center">Seriously, no javascript? C'mon!</h1>
-			</div>
-		</div>
+			{block:Audio}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
 
-		<div class="mcf-blog-pager container">
-			<div class="row">
-				<div class="col-md-12">
-					<ul class="pager">
-						{block:PreviousPage}
-						<li class="previous"><a href="{PreviousPage}">&laquo; Newer</a></li>
-						{/block:PreviousPage}
-						{block:NextPage}
-						<li class="next"><a href="{NextPage}">Older &raquo;</a></li>
-						{/block:NextPage}
-					</ul>
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								{block:AlbumArt}
+								<img src="{AlbumArtURL}" width="50px" height="50px" class="img-circle">
+								{/block:AlbumArt}
+								<span class="tumblr-blog-author">
+									{block:Artist}
+									{Artist}
+									{/block:Artist}
+								</span class="tumblr-blog-author">
+							</p>
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<h4>
+								{block:TrackName}{TrackName}{/block:TrackName}
+								{block:Album}from {Album}{/block:Album}
+							</h4>
+							<p>{AudioPlayerBlack}</p>
+							{block:Caption}{Caption}{/block:Caption}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
+
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Audio}
+
+			{block:Link}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="http://www.google.com/s2/favicons?domain=www.{block:Host}{Host}{/block:Host}" width="16px" height="16px" class="img-circle">
+								<span class="tumblr-blog-author">{block:Host}{Host}{/block:Host}</span class="tumblr-blog-author">
+							</p>
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<a href="{URL}" target="_blank" ><h4>{Name}</h4></a>
+							{block:Description}{Description}{/block:Description}
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
+
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Link}
+
+			{block:Chat}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+								{block:ContentSource}
+								via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+								{SourceTitle}
+								<span class="tumblr-blog-author"></span class="tumblr-blog-author">
+								{/block:ContentSource}
+							</p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<a href="{URL}"><h4>{block:Title}{Title}{/block:Title}</h4></a>
+							<dl class="dl-horizontal">
+							{block:Lines}
+								{block:Label}
+								<dt class="{Alt} user_{UserNumber}"><span class="tumblr-blog-author">{Label}</span class="tumblr-blog-author"></dt>
+								{/block:Label}
+								<dd>{Line}</dd>
+							{/block:Lines}
+							</dl>
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">
+									TAGS: {block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
+
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Chat}
+
+			{block:Answer}
+			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-8 col-md-offset-2">
+							<p>
+								<div class="tumblr-blog-date">
+									<span class="ion-calendar"></span>
+									{block:Date}
+									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									{/block:Date}
+								</div class="tumblr-blog-date">
+							</p>
+							<p>
+								<img src="{AskerPortraitURL-64}" width="50px" height="50px" class="img-circle">
+								<span class="tumblr-blog-author">{Asker} asked</span class="tumblr-blog-author">
+							</p>
+							<a href="{Permalink}"><h4>{Question}</h4></a>
+							<dl class="dl-horizontal">
+								{block:Answerer}
+								<dt>
+									<img src="{AnswererPortraitURL-16}" width="16px" height="16px" class="img-circle">
+									<span class="tumblr-blog-author">{Answerer}</span class="tumblr-blog-author">
+								</dt>
+								<dd>{Answer}</dd>
+								{/block:Answerer}
+
+								<dt>
+									<img src="{PostAuthorPortraitURL-16}" width="16px" height="16px" class="img-circle">
+									<span class="tumblr-blog-author"><a href="{PostAuthorURL}">{PostAuthorName}</a></span class="tumblr-blog-author">
+								</dt>
+								<dd>{Replies}</dd>
+							</dl>
+
+							<br />
+							<p>
+								{block:HasTags}
+								<div class="tumblr-blog-tags">TAGS:
+									{block:Tags}
+									<a href="{TagURL}">{Tag}</a>
+									{/block:Tags}
+								</div class="tumblr-blog-tags">
+								{/block:HasTags}
+							</p>
+
+							{block:PermalinkPage}
+							<hr />
+							<ul class="pager">
+								<li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+							</ul>
+							{/block:PermalinkPage}
+						</div>
+
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:Answer}
+
+			{block:PermalinkPage}
+			<div class="tumblr-blog-post bg-tumblr-alt ">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-8 col-md-offset-2">
+							<h5>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h5>
+							{block:PostNotes}
+								{PostNotes-16}
+							{/block:PostNotes}
+							{block:Date}
+							{block:IfDisqusShortname}
+							<section class="comments">
+								<div id="disqus_thread"></div>
+								<script type="text/javascript">
+								  (function() {
+								   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+								   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+								   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+								  })();
+								</script>
+								<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+								<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+							</section>
+							{/block:IfDisqusShortname}
+							{/block:Date}
+						</div>
+
+					</div><!-- /row -->
+				</div> <!-- /container -->
+			</div><!-- /white -->
+			{/block:PermalinkPage}
+
+			{/block:Posts}
+
+			<!-- +++++ NO JS +++++ -->
+			<div class="jumbotron hidden no-js-message">
+				<div class="container">
+					<h1 class="text-center">Seriously, no javascript? C'mon!</h1>
 				</div>
 			</div>
-		</div>
 
-		<!-- +++++ Footer Section +++++ -->
-		<div id="footer">
+			<div class="mcf-blog-pager container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="pager">
+							{block:PreviousPage}
+							<li class="previous"><a href="{PreviousPage}">&laquo; Newer</a></li>
+							{/block:PreviousPage}
+							{block:NextPage}
+							<li class="next"><a href="{NextPage}">Older &raquo;</a></li>
+							{/block:NextPage}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div id="id-blog-container">
+
+		<div id="foot-clan">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4">
@@ -801,12 +803,10 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
 
     <script>window.jQuery || document.write('<script src="//macremefraiche.com/assets/js/libs/jquery.min.js"><\/script>')</script>
     <script>$.fn.scrollspy || document.write('<script src="//macremefraiche.com/assets/js/libs/bootstrap.min.js"><\/script>')</script>
     <script>window._ || document.write('<script src="//macremefraiche.com/assets/js/libs/underscore-min.js"><\/script>')</script>
-    <script>window.Backbone || document.write('<script src="//macremefraiche.com/assets/js/libs/backbone-min.js"><\/script>')</script>
     <script src="//macremefraiche.com/assets/js/mcf-iframe-player.min.js"></script>
 
 	{block:IfGoogleAnalyticsID}
