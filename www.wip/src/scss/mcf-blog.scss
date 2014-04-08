@@ -8,58 +8,9 @@
 ================ */
 @import 'bourbon';
 
-@import url(//fonts.googleapis.com/css?family=Maven+Pro:700);
-@import url(//fonts.googleapis.com/css?family=Montserrat:400);
-
-html,
-body
-{
-	height: 100%;
-}
-
-/*  WRAP SECTIONS
-================== */
-#id-top-header
-{
-	padding-top: 3rem;
-	padding-bottom: 3rem;
-	background-color: #FFFAD5;
-
-	h1
-	{
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		font-size: 2.1rem;
-	}
-}
-
-#id-blog-container
-{
-	margin: 7.5rem auto -10rem;
-	padding: 0 0 10rem;
-	min-height: 90%;
-	height: auto;
-}
-
-#foot-clan
-{
-	min-height: 10rem;
-	padding-top: 4rem;
-	padding-bottom: 2rem;
-	background-color: #DB9E36;
-
-	p
-	{
-		color: #fff;
-	}
-
-	h4
-	{
-		padding-bottom: 20px;
-		color: #fff;
-		text-transform: uppercase;
-	}
-}
+@import 'mcf-typography';
+@import 'no-js';
+@import 'mcf-nav';
 
 .mcf-blog
 {
@@ -67,25 +18,9 @@ body
 	color: #555;
 	font-weight: 400;
 	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-webkit-overflow-scrolling: touch;
-}
-
-.mcf-blog {
 
 /*  Titles
 ================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: #333;
-	font-weight: 700;
-	font-family: 'Maven Pro', sans-serif;
-}
 h1 {
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -130,76 +65,6 @@ hr {
 	border-top: 1px solid #ccc;
 }
 
-.navbar-mcf
-{
-	padding-top: 1rem;
-	min-height: 7.5rem;
-	background-color: #105B63;
-}
-
-.navbar-mcf .navbar-header {
-	padding-bottom: 1rem;
-}
-.navbar-mcf .navbar-brand {
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 700;
-	font-size: 1.6rem;
-    font-family: 'Maven Pro', sans-serif;
-}
-
-.navbar-mcf .navbar-collapse,
-.navbar-mcf .navbar-form
-{
-	border-color: #16a085;
-	border-top-width: 0.2rem;
-	border-bottom-width: 0.5rem;
-	border-bottom-style: solid;
-}
-
-.navbar-mcf .navbar-toggle .icon-bar {
-	background-color: #fff;
-}
-
-.navbar-mcf .navbar-brand,
-.navbar-mcf .navbar-nav > li > a
-{
-	color: #fff;
-}
-
-.navbar-mcf .navbar-toggle:focus .icon-bar,
-.navbar-mcf .navbar-toggle:hover .icon-bar
-{
-	background-color: #FFFAD5;
-}
-
-.navbar-mcf .navbar-brand:focus,
-.navbar-mcf .navbar-brand:hover
-{
-	color: #FFFAD5;
-}
-
-.navbar-mcf .navbar-nav > li > a:hover
-{
-	color: #FFD34E;
-}
-
-.navbar-mcf .navbar-toggle
-{
-	border-color: transparent;
-}
-
-.navbar-mcf .navbar-toggle:focus,
-.navbar-mcf .navbar-toggle:hover
-{
-	background-color: #0c454b;
-}
-
-.progress-bar-theme
-{
-	background-color: #1abc9c;
-}
-
 .pager .previous > a {
 	margin-left: 1rem;
 }
@@ -223,15 +88,11 @@ hr {
 	border-color: #A33F2B;
 }
 
-.push-top {
-	margin-top: 7.5rem;
-}
-
 /*  Color Wraps / Blog Page
 ================== */
 .tumblr-blog-post {
-	padding-top: 60px;
-	padding-bottom: 0px;
+	padding-top: 8rem;
+	padding-bottom: 8rem;
 }
 .bg-tumblr-alt {
 	background-color: #F0F0F0;
@@ -249,7 +110,7 @@ hr {
 /* Blog Author*/
 .tumblr-blog-author {
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 1.25rem;
 }
 /* Blog Quote */
 .tumblr-blog-quote {
@@ -268,26 +129,24 @@ hr {
 }
 ol.notes {
 	list-style: none;
-	letter-spacing: 2px;
-	line-height: 2em;
-}
-ol.notes li img {
-	padding-right: 4px;
-	border-radius: 50%;
-}
+	letter-spacing: 0.05rem;
+	line-height: 3rem;
 
-}
-
-.no-js
-{
-	.tumblr-blog-post
-	{
-		display : none !important;
+	li img {
+		margin-right: 1rem;
+		border-radius: 50%;
 	}
 
-	.no-js-message
-	{
-		display: block !important;
-		visibility: visible !important;
+	blockquote {
+		font-size: 2rem;
+		&:before,
+		&:after
+		{
+			margin: 0 0.5rem;
+			content : "\"";
+			font-size: 2.5rem;
+		}
 	}
+}
+
 }

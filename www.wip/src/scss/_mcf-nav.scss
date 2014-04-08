@@ -1,144 +1,140 @@
-.text {
-    background-image: url(http://static.tumblr.com/yrefrti/8dgmnqx0g/text_icon.fw.png)!important;
-}
-.photo {
-    background-image: url(http://static.tumblr.com/yrefrti/BMimnqwx0/photo_icon.fw.png)!important;
-}
-.quote {
-    background-image: url(http://static.tumblr.com/yrefrti/rihmnqwxm/quote_icon.fw.png)!important;
-}
-.link {
-    background-image: url(http://static.tumblr.com/yrefrti/b8lmnqwvx/link_icon.fw.png)!important;
-}
-.chat {
-    background-image: url(http://static.tumblr.com/yrefrti/Qxwmnqwvc/chat_icon.fw.png)!important;
-}
-.audio {
-    background-image: url(http://static.tumblr.com/yrefrti/xcbmnqwty/audio_icon.fw.png)!important;
-}
-.video {
-    background-image: url(http://static.tumblr.com/yrefrti/sNrmnqx16/video_icon.fw.png)!important;
-}
-.random {
-    background-image: url(http://static.tumblr.com/yrefrti/CTjmnqwy8/random_icon.fw.png)!important;
-}
-@font-face {
-    font-weight: normal;
-    font-style: normal;
-    font-family: 'SegoeWPNLightRegular';
-    src: url('http://static.tumblr.com/yrefrti/Sgdmnqws2/segoewpn-light_0-webfont.eot');
-    src: url('http://static.tumblr.com/yrefrti/Sgdmnqws2/segoewpn-light_0-webfont.eot?#iefix') format('embedded-opentype'),url('http://static.tumblr.com/yrefrti/Yaymnqwrj/segoewpn-light_0-webfont.woff') format('woff'),url('http://static.tumblr.com/yrefrti/8LKmnqwpa/segoewpn-light_0-webfont.ttf') format('truetype');
-}
 
-/*
-  mcf
-*/
-
-#showNavigation,
-#header h1
+html,
+body
 {
-    font-family: 'SegoeWPNLightRegular', sans-serif;
+    height: 100%;
 }
 
-#header {
-    padding-top: 50px;
-    height: 200px;
-    background: #f4f4f4;
-}
-#header h1 {
-    float: left;
-    margin: 0;
-    height: 100px;
-    font-weight: normal;
-    font-size: 96px;
-    line-height: 100px;
-}
-.subheader {
-    padding-left: 5% !important;
-    text-transform: lowercase;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 100px;
-}
-.subheader a:link,
-.subheader a:visited {
-    margin-right: 20px;
-    color: #999;
-    text-decoration: none;
-}
-.subheader a:hover {
-    color: #666;
+/*  WRAP SECTIONS
+================== */
+#id-top-header
+{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #FFFAD5;
+
+    h1
+    {
+        text-transform: uppercase;
+        font-size: 2.1rem;
+    }
 }
 
-#navigation {
-    display: none;
-    border-top: 7px solid #1BA1E2;
-    background: #333;
+#id-top-header h1,
+.navbar-mcf .navbar-brand
+{
+    letter-spacing: 0.2rem;
+}
 
-    h3 {
-        margin-bottom: -10px;
-        padding-top: 15px;
+
+.mcf-body
+{
+    margin: 7.5rem auto -10rem;
+    padding: 0 0 10rem;
+    min-height: 100%;
+    height: auto;
+}
+
+#foot-clan
+{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    min-height: 10rem;
+    background-color: #DB9E36;
+
+    p
+    {
+        color: #fff;
+    }
+
+    h4
+    {
+        padding-bottom: 3rem;
         color: #fff;
         text-transform: uppercase;
-        font-weight: normal;
-        font-size: 16px;
+    }
+}
+
+.navbar-mcf
+{
+    padding-top: 1rem;
+    min-height: 7.5rem;
+    background-color: #105B63;
+
+    .ion
+    {
+        font-size: 2rem;
     }
 
-    a {
-        @include transition-property( border );
-        @include transition-duration( 0.25s );
-        @include transition-timing-function( $ease-out-quad );
-        display: block;
-        float: left;
-        margin: 12px;
-        padding-top: 75px;
-        padding-left: 10px;
-        width: 85px;
-        height: 20px;
-        border: 3px solid transparent;
-        background: #3f3f3f;
+    .nav-item
+    {
+        margin-left: 0.5rem;
+        vertical-align: text-bottom;
+        font-size: 1.5rem;
+    }
+
+    .navbar-header
+    {
+        padding-bottom: 1rem;
+    }
+
+    .navbar-brand
+    {
         color: #fff;
-        font-size: 13px;
-    }
-    a:hover {
-        border: 3px solid rgba(255,255,255,0.55);
-        text-decoration: none;
-    }
-}
+        text-transform: uppercase;
+        font-size: 1.6rem;
 
-@media (min-width: 768px) {
-    /* page specific here */
-}
-
-@media (min-width: 992px) {
-    /* page specific here */
-}
-
-@media (min-width: 1200px) {
-    /* page specific here */
-
-    /* pad left */
-    #navigation h3 {
-        padding-left: 8.3333333%;
+        &.hover,
+        &:hover,
+        &:focus
+        {
+            color: #FFFAD5;
+        }
     }
 
-}
+    .navbar-collapse,
+    .navbar-form
+    {
+        border-color: #16a085;
+        border-top-width: 0.2rem;
+        border-bottom-width: 0.5rem;
+        border-bottom-style: solid;
+    }
 
-#showNavigation {
-    @include transition-property( color );
-    @include transition-duration( 0.25s );
-    @include transition-timing-function( $ease-out-quad );
-    display: block;
-    padding-right: 30px;
-    color: #000;
-    text-align: right;
-    letter-spacing: -5px;
-    font-weight: bold;
-    font-size: 99px;
-    line-height: 0;
+    .navbar-toggle
+    {
+        .icon-bar
+        {
+            background-color: #fff;
+        }
+        &:focus .icon-bar,
+        &:hover .icon-bar
+        {
+            background-color: #FFFAD5;
+        }
+    }
 
-    &:hover{
-        color: #777;
-        text-decoration: none;
+    .navbar-nav > li > a
+    {
+        color: #fff;
+
+        &.active,
+        &:active,
+        &.hover,
+        &:hover
+        {
+            color: #FFD34E;
+        }
+    }
+
+    .navbar-toggle
+    {
+        border-color: transparent;
+
+        &:focus,
+        &:hover
+        {
+            background-color: #0c454b;
+        }
     }
 }

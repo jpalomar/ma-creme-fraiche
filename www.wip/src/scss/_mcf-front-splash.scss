@@ -1,0 +1,16 @@
+
+
+#id-svg-clock {
+    path {
+        @include transition-property (fill);
+        @include transition-duration(0.25s);
+        @include transition-timing-function(ease-out);
+    }
+}
+
+#id-svg-clock-g {
+    @include transition-property (transform);
+    @include transition-duration(0.25s);
+    @include transition-timing-function(ease-out);
+}
+

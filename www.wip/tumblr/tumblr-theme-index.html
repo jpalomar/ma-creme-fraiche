@@ -1,128 +1,131 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage} - {SearchQuery}{/block:SearchPage}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+		<title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage}({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
 
-	<link rel="shortcut icon" href="{Favicon}">
-	<link rel="apple-touch-icon" href="{PortraitURL-128}" />
-	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon" href="{PortraitURL-128}" />
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-	{block:Description}
-	<meta name="description" content="{MetaDescription}" />
-	{/block:Description}
+	    <meta name="geo.placename" content="Dallas">
 
-	{block:PostSummary}
-	<meta property="og:title" content="{PostSummary} - {Name}" />
-	{/block:PostSummary}
+		{block:Description}
+		<meta name="description" content="{MetaDescription}" />
+		{/block:Description}
 
-	<meta property="og:site_name" content="{Title}"/>
+		{block:PostSummary}
+		<meta property="og:title" content="{PostSummary} - {Name}" />
+		{/block:PostSummary}
 
-	{block:IndexPage}
-	<meta property="og:title" content="{Title}"/>
-	<meta property="og:type" content="blog"/>
-	<meta property="og:description" content="{MetaDescription}"/>
-	<meta property="og:image" content="{PortraitURL-128}"/>
-	{/block:IndexPage}
+		<meta property="og:site_name" content="{Title}"/>
 
-	{block:PermalinkPage}
-	<meta property="og:url" content="{Permalink}"/>
-	<meta property="og:type" content="article"/>
-	{block:Posts}
+		{block:IndexPage}
+		<meta property="og:title" content="{Title}"/>
+		<meta property="og:type" content="blog"/>
+		<meta property="og:description" content="{MetaDescription}"/>
+		<meta property="og:image" content="{PortraitURL-128}"/>
+		{/block:IndexPage}
 
-	{block:Text}
-	{block:Title}
-	<meta property="og:title" content="{PlaintextTitle}"/>
-	{/block:Title}
-	<meta property="og:description" content="{PlaintextBody}"/>
-	{/block:Text}
+		{block:PermalinkPage}
+		<meta property="og:url" content="{Permalink}"/>
+		<meta property="og:type" content="article"/>
+		{block:Posts}
 
-	{block:Photo}
-	<meta property="og:image" content="{PhotoURL-500}"/>
-	{block:Caption}
-	<meta property="og:description" content="{PlaintextCaption}"/>
-	{/block:Caption}
-	{/block:Photo}
+		{block:Text}
+		{block:Title}
+		<meta property="og:title" content="{PlaintextTitle}"/>
+		{/block:Title}
+		<meta property="og:description" content="{PlaintextBody}"/>
+		{/block:Text}
 
-	{block:Photoset}
-	{block:Photos}
-	<meta property="og:image" content="{PhotoURL-500}"/>
-	{/block:Photos}
-	{block:Caption}
-	<meta property="og:description" content="{PlaintextCaption}"/>
-	{/block:Caption}
-	{/block:Photoset}
+		{block:Photo}
+		<meta property="og:image" content="{PhotoURL-500}"/>
+		{block:Caption}
+		<meta property="og:description" content="{PlaintextCaption}"/>
+		{/block:Caption}
+		{/block:Photo}
 
-	{block:Quote}
-	<meta property="og:title" content="{PlaintextQuote}"/>
-	<meta property="og:description" content="{PlaintextSource}"/>
-	<meta property="og:image" content="{PortraitURL-128}"/>
-	{/block:Quote}
+		{block:Photoset}
+		{block:Photos}
+		<meta property="og:image" content="{PhotoURL-500}"/>
+		{/block:Photos}
+		{block:Caption}
+		<meta property="og:description" content="{PlaintextCaption}"/>
+		{/block:Caption}
+		{/block:Photoset}
 
-	{block:Link}
-	<meta property="og:title" content="{PlaintextName}"/>
-	<meta property="og:description" content="{PlaintextDescription}"/>
-	<meta property="og:image" content="{PortraitURL-128}"/>
-	{/block:Link}
+		{block:Quote}
+		<meta property="og:title" content="{PlaintextQuote}"/>
+		<meta property="og:description" content="{PlaintextSource}"/>
+		<meta property="og:image" content="{PortraitURL-128}"/>
+		{/block:Quote}
 
-	{block:Chat}
-	<meta property="og:title" content="{PlaintextTitle}"/>
-	<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
-	<meta property="og:image" content="{PortraitURL-128}"/>
-	{/block:Chat}
+		{block:Link}
+		<meta property="og:title" content="{PlaintextName}"/>
+		<meta property="og:description" content="{PlaintextDescription}"/>
+		<meta property="og:image" content="{PortraitURL-128}"/>
+		{/block:Link}
 
-	{block:Audio}
-	<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
-	<meta property="og:description" content="{PlaintextCaption}"/>
-	{block:AlbumArt}
-	<meta property="og:image" content="{AlbumArtURL}"/>
-	{/block:AlbumArt}
-	{/block:Audio}
+		{block:Chat}
+		<meta property="og:title" content="{PlaintextTitle}"/>
+		<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+		<meta property="og:image" content="{PortraitURL-128}"/>
+		{/block:Chat}
 
-	{block:Video}
-	{block:Caption}
-	<meta property="og:description" content="{PlaintextCaption}"/>
-	{/block:Caption}
-	{/block:Video}
+		{block:Audio}
+		<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+		<meta property="og:description" content="{PlaintextCaption}"/>
+		{block:AlbumArt}
+		<meta property="og:image" content="{AlbumArtURL}"/>
+		{/block:AlbumArt}
+		{/block:Audio}
 
-	{block:Answer}
-	<meta property="og:title" content="{PlaintextQuestion}"/>
-	<meta property="og:description" content="{PlaintextAnswer}"/>
-	<meta property="og:image" content="{PortraitURL-128}"/>
-	{/block:Answer}
+		{block:Video}
+		{block:Caption}
+		<meta property="og:description" content="{PlaintextCaption}"/>
+		{/block:Caption}
+		{/block:Video}
 
-	{/block:Posts}
-	{/block:PermalinkPage}
+		{block:Answer}
+		<meta property="og:title" content="{PlaintextQuestion}"/>
+		<meta property="og:description" content="{PlaintextAnswer}"/>
+		<meta property="og:image" content="{PortraitURL-128}"/>
+		{/block:Answer}
 
-	<meta name="text:Social Heading" content=""/>
-	<meta name="text:Contact Heading" content=""/>
-	<meta name="text:Contact Address" content=""/>
-	<meta name="text:Contact Phone" content=""/>
-	<meta name="text:Contact Email" content=""/>
-	<meta name="text:Facebook Username" content=""/>
-	<meta name="text:Dribbble Username" content=""/>
-	<meta name="text:TWitter Username" content=""/>
-	<!-- <meta name="color:Header Color" content="#1abc9c"> -->
-	<!-- <meta name="color:Box Color" content="#f2f2f2"> -->
-	<!-- <meta name="color:Alternate Color" content="#f2f2f2"> -->
-	<!-- <meta name="color:Footer Color" content="#2f2f2f"> -->
-	<meta name="text:Disqus shortname" content="">
-	<meta name="text:Google analytics ID" content="UA-97144-8">
+		{/block:Posts}
+		{/block:PermalinkPage}
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
-	<link rel="stylesheet" href="//macremefraiche.com/assets/css/ionicons.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//macremefraiche.com/assets/css/mcf-blog.css">
-	<style>
-	{CustomCSS}
-	</style>
+		<meta name="text:Social Heading" content=""/>
+		<meta name="text:Contact Heading" content=""/>
+		<meta name="text:Contact Address" content=""/>
+		<meta name="text:Contact Phone" content=""/>
+		<meta name="text:Contact Email" content=""/>
+		<meta name="text:Facebook Username" content=""/>
+		<meta name="text:Dribbble Username" content=""/>
+		<meta name="text:TWitter Username" content=""/>
+		<!-- <meta name="color:Header Color" content="#1abc9c"> -->
+		<!-- <meta name="color:Box Color" content="#f2f2f2"> -->
+		<!-- <meta name="color:Alternate Color" content="#f2f2f2"> -->
+		<!-- <meta name="color:Footer Color" content="#2f2f2f"> -->
+		<meta name="text:Disqus shortname" content="">
+		<meta name="text:Google analytics ID" content="UA-97144-8">
+
+		<link rel="stylesheet" href="//macremefraiche.com/assets/css/ionicons.min.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//macremefraiche.com/assets/css/mcf-blog.css">
+		<style>
+		{CustomCSS}
+		</style>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+		<script>window.Modernizr || document.write('<script src="\/\/macremefraiche.com\/assets\/js\/libs\/modernizr.min.js"><\/script>')</script>
 	</head>
 	<body class="mcf-blog">
-		<!-- Static navbar -->
+
+		<!-- *&*&*&*&*&*& NAV *&*&*&*&*&*& -->
 		<div class="navbar navbar-fixed-top navbar-default navbar-mcf">
 			<div class="container">
 				<div class="navbar-header">
@@ -133,25 +136,26 @@
 						<span class="icon-bar"></span>
 					</button>
 				</div>
-				<div class="navbar-collapse collapse">
+				<nav class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/archive">Archives</a></li>
-						<li><a href="/random">Random</a></li>
+						<li><a href="//blog.macremefraiche.com/" title="Blog" class="{block:IndexPage}active {/block:IndexPage}"><span class="ion ion-disc"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Blog</span></a></li>
+						<li><a href="/random" title="Random"><span class="ion ion-shuffle"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Random</span></a></li>
+						<li><a href="/archive" title="Archives"><span class="ion ion-filing"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Archives</span></a></li>
 						{block:HasPages}
 						{block:Pages}
 						<li><a href="{URL}">{Label}</a></li>
 						{/block:Pages}
 						{/block:HasPages}
 					</ul>
-				</div><!--/.nav-collapse -->
+				</nav><!--/.nav-collapse -->
 			</div>
 		</div>
 
-		<div id="id-blog-container">
+		<div id="id-blog-container" class="mcf-body">
 
-			<!-- top header  -->
+			<!-- *&*&*&*&*&*& HEADER *&*&*&*&*&*& -->
 			{block:IndexPage}
-			<div id="id-top-header" class="{block:TagPage}hidden{/block:TagPage}">
+			<div id="id-top-header" class=" {block:TagPage}hidden{/block:TagPage}">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2 text-center">
@@ -163,11 +167,11 @@
 						</div><!-- /col-lg-8 -->
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /id-top-header -->
+			</div><!-- /#id-top-header -->
 			{/block:IndexPage}
 
 			{block:TagPage}
-			<div class="tumblr-blog-post bg-tumblr-alt">
+			<article class="tumblr-blog-post bg-tumblr-alt">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
@@ -175,14 +179,14 @@
 						</div>
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:TagPage}
 
-			<!-- +++++ Post +++++ -->
+			<!-- *&*&*&*&*&*& POST *&*&*&*&*&*& -->
 			{block:Posts}
 
 			{block:Text}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -222,11 +226,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Text}
 
 			{block:Quote}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -264,11 +268,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Quote}
 
 			{block:Photo}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -322,11 +326,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Photo}
 
 			{block:Panorama}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -381,11 +385,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Panorama}
 
 			{block:Photoset}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -432,11 +436,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Photoset}
 
 			{block:Video}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -481,11 +485,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Video}
 
 			{block:Audio}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -534,11 +538,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Audio}
 
 			{block:Link}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -577,11 +581,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Link}
 
 			{block:Chat}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
@@ -630,11 +634,11 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Chat}
 
 			{block:Answer}
-			<div class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -689,16 +693,16 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:Answer}
 
 			{block:PermalinkPage}
-			<div class="tumblr-blog-post bg-tumblr-alt ">
+			<article class="tumblr-blog-post bg-tumblr-alt ">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-8 col-md-offset-2">
-							<h5>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h5>
+							<h4>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h4>
 							{block:PostNotes}
 								{PostNotes-16}
 							{/block:PostNotes}
@@ -722,12 +726,12 @@
 
 					</div><!-- /row -->
 				</div> <!-- /container -->
-			</div><!-- /white -->
+			</article><!-- .blog-post -->
 			{/block:PermalinkPage}
 
 			{/block:Posts}
 
-			<!-- +++++ NO JS +++++ -->
+			<!-- *&*&*&*&*&*& NO JS *&*&*&*&*&*& -->
 			<div class="jumbotron hidden no-js-message">
 				<div class="container">
 					<h1 class="text-center">Seriously, no javascript? C'mon!</h1>
@@ -798,15 +802,15 @@
 
 				</div> <!-- /.row -->
 			</div> <!-- /.container -->
-		</div> <!-- /#footer -->
+		</div> <!-- /#foot-clan -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 
-    <script>window.jQuery || document.write('<script src="//macremefraiche.com/assets/js/libs/jquery.min.js"><\/script>')</script>
-    <script>$.fn.scrollspy || document.write('<script src="//macremefraiche.com/assets/js/libs/bootstrap.min.js"><\/script>')</script>
-    <script>window._ || document.write('<script src="//macremefraiche.com/assets/js/libs/underscore-min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="\/\/macremefraiche.com\/assets\/js\/libs\/jquery.min.js"><\/script>')</script>
+    <script>$.fn.scrollspy || document.write('<script src="\/\/macremefraiche.com\/assets\/js\/libs\/bootstrap.min.js"><\/script>')</script>
+    <script>window._ || document.write('<script src="\/\/macremefraiche.com\/assets\/js\/libs\/underscore-min.js"><\/script>')</script>
     <script src="//macremefraiche.com/assets/js/mcf-iframe-player.min.js"></script>
 
 	{block:IfGoogleAnalyticsID}

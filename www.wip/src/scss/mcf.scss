@@ -1,15 +1,10 @@
+/*! * tout pour vous */
 
 // sass lib
 // requires bourbon.io import lib
 @import 'bourbon';
 
-// resets
-@import 'normalize-3.0.0';
-@import 'h5bp-4.3.0';
-
-// mcf-ishs
-@import 'mcf-stripped-bootstrap';
-@import 'mcf-general';
+@import 'mcf-typography';
+@import 'no-js';
 @import 'mcf-nav';
-
-/*! * tout pour vous */
+@import 'mcf-front-splash';

@@ -1,17 +1,17 @@
-(function ($, _, Backbone, undefined) {
+(function ($, MCF /*, _, Backbone*/ ) {
 
 // local namespace
-var GLOBAL = this;
+// var GLOBAL = this;
 
 // contents
 
 
 
 // init page
-$(function($){
+$(function(){
 
-
+	MCF.initFrontSplash();
 
 });
 
-}).call(this, this.jQuery, this._, this.Backbone);
+}).call(this, this.jQuery, this.MCF || ( this.MCF = {} ) /*, this._, this.Backbone*/);
