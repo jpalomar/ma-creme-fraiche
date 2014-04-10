@@ -3,28 +3,31 @@
     function tick() {
         // store for reference
         var previousValue=[];
+        var time_values = get_the_time();
+        $tooltip_content.data('time-values',time_values);
 
         fields
             .each(function(_data, _index ) {
                 previousValue[_index] = _data.value;
             })
-            .data( get_the_time )
+            .data( time_values )
             .each(function(_data, _index ) {
                 _data.previousValue = previousValue[_index];
             })
             ;
 
         fields.select('path')
-            .on('mousemove', function ( _data ){
+            .on('mousemove', function ( _data, _index ){
 
                 $tooltip.removeClass('hidden')
+                    .attr('data-time', _index )
                     .css({
                         'top': ( d3.event.pageY - $tooltip.height()*1.5 ),
                         'left': ( d3.event.pageX - $tooltip.width()/2 ),
                     })
-                    .find('.tooltip-inner')
-                    .text( _data.text )
                     ;
+
+                fn_refreshtip();
             })
             .on('mouseout', function ( ){
                 $tooltip.addClass('hidden');
@@ -42,6 +45,10 @@
                 return color(_data.value);
             })
             ;
+
+        if ( $tooltip.is(':visible') ) {
+            fn_refreshtip();
+        }
 
         timeout = _(tick).delay( 1000 - _.now() % 1000 );
         // console.log(counter++);
@@ -97,12 +104,18 @@
             ;
 
         fields.append('path');
-
     }
 
     function empty_the_splash () {
         // empty
         this.selectAll('*').remove();
+    }
+
+    function fn_refreshtip () {
+        var index = $tooltip.attr('data-time');
+        var data = $tooltip_content.data('time-values');
+        var text = data[index].text;
+        $tooltip_content.text( text );
     }
 
     function update_front_splash() {
@@ -156,12 +169,14 @@
             .prependTo( 'body' )
             ;
 
+        $tooltip_content = $tooltip.find('.tooltip-inner');
+
         $(window).resize( update_front_splash_svg ).resize();
     }
 
     var spacing = 0.09,
-        d3_time = d3.time,
         selector = '#id-front-splash',
+        d3_time = d3.time,
         update_front_splash_svg,
         timeout,
         fields,
@@ -169,6 +184,7 @@
         radius,
         $container,
         $tooltip,
+        $tooltip_content,
         formatSecond,
         formatMinute,
         formatHour,
