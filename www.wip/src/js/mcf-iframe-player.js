@@ -7,25 +7,26 @@ $(function() {
 
     var fn_vid_resize = _(function() {
 
-        var newWidth = $container.width();
+        var width = $container.width();
 
         // resize all videos according to their own aspect ratio
         $videos.each(function() {
 
             var $vid = $(this);
 
-            $vid.width(newWidth /*'100%'*/)
-                .height(newWidth * $vid.data('aspectRatio'))
+            $vid.width('100%')
+                .height( Math.min( (width*$vid.data('aspectratio')), 480 ) )
                 ;
         });
 
     }).debounce(300);
 
     $videos.each(function() {
-        // remove the hard coded width / height
-        $(this).removeAttr('height width')
+        $(this)
             // save aspect ratio for each video
-            .data('aspectRatio', this.height / this.width)
+            .data('aspectratio', this.height / this.width)
+            // remove the hard coded width / height
+            .removeAttr('height width')
             ;
     });
 
