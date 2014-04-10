@@ -272,7 +272,7 @@
 			{/block:Quote}
 
 			{block:Photo}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-photo {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -330,7 +330,7 @@
 			{/block:Photo}
 
 			{block:Panorama}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-panorama {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -389,7 +389,7 @@
 			{/block:Panorama}
 
 			{block:Photoset}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-photoset {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -412,8 +412,11 @@
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
-							<div class="tmblr-photoset">
+							<div class="tmblr-photoset hidden-xs">
 							{Photoset}
+							</div>
+							<div class="tmblr-photoset visible-xs">
+							{Photoset-250}
 							</div>
 							{block:Caption}{Caption}{/block:Caption}
 							<br />

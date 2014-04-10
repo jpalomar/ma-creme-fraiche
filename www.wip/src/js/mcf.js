@@ -1,4 +1,4 @@
-(function ($, MCF /*, _, Backbone*/ ) {
+(function (MCF, $ /*, _, Backbone*/ ) {
 
 // local namespace
 // var GLOBAL = this;
@@ -10,8 +10,8 @@
 // init page
 $(function(){
 
-	MCF.initFrontSplash();
+	$(document).trigger('mcf.init-splash');
 
 });
 
-}).call(this, this.jQuery, this.MCF || ( this.MCF = {} ) /*, this._, this.Backbone*/);
+}).call(this, this.MCF || ( this.MCF = {} ), this.jQuery /*, this._, this.Backbone*/);
