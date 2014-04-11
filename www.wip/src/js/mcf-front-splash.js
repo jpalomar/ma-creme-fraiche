@@ -1,56 +1,65 @@
 (function (MCF, $, _, d3) {
 
     function tick() {
-        // store for reference
-        var previousValue=[];
-        var time_values = get_the_time();
-        $tooltip_content.data('time-values',time_values);
 
-        fields
-            .each(function(_data, _index ) {
-                previousValue[_index] = _data.value;
-            })
-            .data( time_values )
-            .each(function(_data, _index ) {
-                _data.previousValue = previousValue[_index];
-            })
-            ;
-
-        fields.select('path')
-            .on('mousemove', function ( _data, _index ){
-
-                $tooltip.removeClass('hidden')
-                    .attr('data-time', _index )
-                    .css({
-                        'top': ( d3.event.pageY - $tooltip.height()*1.5 ),
-                        'left': ( d3.event.pageX - $tooltip.width()/2 ),
-                    })
-                    ;
-
-                fn_refreshtip();
-            })
-            .on('mouseout', function ( ){
-                $tooltip.addClass('hidden');
-            })
-            .transition()
-            .ease('back')
-            .attrTween('d', function (_data) {
-                var i = d3.interpolateNumber(_data.previousValue, _data.value);
-                return function(_tween) {
-                    _data.value = i(_tween);
-                    return arc(_data);
-                };
-            })
-            .style('fill', function (_data) {
-                return color(_data.value);
-            })
-            ;
-
-        if ( $tooltip.is(':visible') ) {
+        function place_and_update_tooltip (_data, _index) {
+            var xy = d3.mouse(document.documentElement);
+            $tooltip
+                .attr('data-time', _index)
+                .css({
+                    'top': (xy[1] - $tooltip.height() * 1.5),
+                    'left': (xy[0] - $tooltip.width() / 2),
+                });
             fn_refreshtip();
         }
 
-        timeout = _(tick).delay( 1000 - _.now() % 1000 );
+        function hide_tooltip() {
+            $tooltip.addClass('hidden');
+        }
+        function toggle_tooltip(_data, _index) {
+            $tooltip.toggleClass('hidden');
+            place_and_update_tooltip.call(this, _data, _index);
+        }
+        function show_tooltip(_data, _index) {
+            $tooltip.removeClass('hidden');
+            place_and_update_tooltip.call(this, _data, _index);
+        }
+
+        // store for reference
+        var previousValue = [];
+        time_model = get_the_time();
+
+        d3_paths
+            .each(function(_data, _index) {
+                previousValue[_index] = _data.value;
+            })
+            .data(time_model)
+            .each(function(_data, _index) {
+                _data.previousValue = previousValue[_index];
+            });
+
+        d3_paths.select('path')
+            .on('mousemove', show_tooltip )
+            .on('mouseout', hide_tooltip )
+            .on('mouseup', toggle_tooltip )
+            .transition()
+            .ease('back')
+            .attrTween('d', function(_data) {
+                var i = d3.interpolateNumber(_data.previousValue, _data.value);
+                return function(_tween) {
+                    _data.value = i(_tween);
+                    return d3_arc(_data);
+                };
+            })
+            .style('fill', function(_data) {
+                return d3_color(_data.value);
+            });
+
+        if ($tooltip.is(':visible')) {
+            fn_refreshtip();
+        }
+
+        timeout = _(tick).delay(1000 - _.now() % 1000);
         // console.log(counter++);
     }
     // var counter = 0;
@@ -84,70 +93,69 @@
         }];
     }
 
-    function create_the_clock ( _d3_selection, _width, _height  ) {
-        radius = Math.min( _width, _height ) / 2;
+    function create_the_clock(_d3_selection, _width, _height) {
 
-        var d3_group = this.attr({
-            'width' : _width,
-            'height' : _height,
-        }).append('g')
+        var d3_group = this
             .attr({
-                'id' : 'id-svg-clock-g',
-                'class' : 'mcf-fade-in',
-                'transform' : 'translate(' + _width / 2 + ',' + _height / 2 + ')',
+                'width': _width,
+                'height': _height,
             })
-            ;
+            .append('g')
+            .attr({
+                'id': 'id-svg-clock-g',
+                'class': 'mcf-fade-in',
+                'transform': 'translate(' + _width / 2 + ',' + _height / 2 + ')',
+            });
 
-        fields = d3_group.selectAll('g')
-            .data( get_the_time )
-            .enter().append('g')
-            ;
+        d3_paths = d3_group.selectAll('g')
+            .data(get_the_time)
+            .enter().append('g');
 
-        fields.append('path');
+        d3_paths.append('path');
+
+        radius = Math.min(_width, _height) / 2;
     }
 
-    function empty_the_splash () {
+    function empty_the_splash() {
         // empty
         this.selectAll('*').remove();
     }
 
-    function fn_refreshtip () {
-        var index = $tooltip.attr('data-time');
-        var data = $tooltip_content.data('time-values');
-        var text = data[index].text;
-        $tooltip_content.text( text );
+    function fn_refreshtip() {
+        // var index = $tooltip.attr('data-time');
+        // var text = time_model[index].text;
+        // $tooltip.find('.tooltip-inner').text( text );
+        $tooltip.find('.tooltip-inner').text(time_model[$tooltip.attr('data-time')].text);
     }
 
     function update_front_splash() {
         clearTimeout(timeout);
         // empty
-        svg.call(empty_the_splash)
-            .call(create_the_clock, $container.width(), $container.height() )
-            ;
+        d3_svg.call(empty_the_splash)
+            .call(create_the_clock, $container.width(), $container.height());
 
         d3.transition().each(tick);
     }
 
-    function initialize_the_front_splash (){
+    function initialize_the_front_splash() {
         $container = $(selector);
-        formatSecond = d3_time.format('%S s');
-        formatMinute = d3_time.format('%I:%M %p');
-        formatHour = d3_time.format('%I %p');
-        formatDay = d3_time.format('%a, %b %d');
-        formatDate = d3_time.format('%b %d');
-        formatMonth = d3_time.format('%b %Y');
+        formatSecond = d3_time_format('%S s');
+        formatMinute = d3_time_format('%I:%M %p');
+        formatHour = d3_time_format('%I %p');
+        formatDay = d3_time_format('%a, %b %d');
+        formatDate = d3_time_format('%b %d');
+        formatMonth = d3_time_format('%b %Y');
 
-        color = d3.scale.linear()
+        d3_color = d3.scale.linear()
             .range(['hsl(180,100%,75%)', 'hsl(360,100%,75%)'])
-            .interpolate(function ( _arg1, _arg2 ) {
-                var i = d3.interpolateString( _arg1, _arg2 );
-                return function ( _text ) {
-                    return d3.hsl(i( _text ));
+            .interpolate(function(_arg1, _arg2) {
+                var i = d3.interpolateString(_arg1, _arg2);
+                return function(_text) {
+                    return d3.hsl(i(_text));
                 };
-            })
-            ;
+            });
 
-        arc = d3.svg.arc()
+        d3_arc = d3.svg.arc()
             .startAngle(0)
             .endAngle(function(_data) {
                 return _data.value * 2 * Math.PI;
@@ -157,30 +165,26 @@
             })
             .outerRadius(function(_data) {
                 return (_data.index + spacing) * radius;
-            })
-            ;
+            });
 
-        svg = d3.select(selector).append('svg')
-            .attr('id', 'id-svg-clock')
-            ;
+        d3_svg = d3.select(selector).append('svg')
+            .attr('id', 'id-svg-clock');
 
         $tooltip = $($.fn.tooltip.Constructor.DEFAULTS.template)
             .addClass('top in mcf-tooltip hidden')
-            .prependTo( 'body' )
-            ;
+            .prependTo('body');
 
         $tooltip_content = $tooltip.find('.tooltip-inner');
 
-        $(window).resize( update_front_splash_svg ).resize();
+        $(window).resize(update_front_splash_svg).resize();
     }
 
     var spacing = 0.09,
         selector = '#id-front-splash',
-        d3_time = d3.time,
+        d3_time_format = d3.time.format,
         update_front_splash_svg,
+        time_model,
         timeout,
-        fields,
-        svg,
         radius,
         $container,
         $tooltip,
@@ -191,18 +195,19 @@
         formatDay,
         formatDate,
         formatMonth,
-        color,
-        arc
-        ;
+        d3_svg,
+        d3_paths,
+        d3_color,
+        d3_arc;
 
     // wrap to save load time
-    $(function(){
-        update_front_splash_svg = _(update_front_splash).debounce(300);
-        $(document).on('mcf.init-splash', _(initialize_the_front_splash).once() );
-        // MCF.initFrontSplash();
+    $(function() {
 
+        update_front_splash_svg = _(update_front_splash).debounce(250);
+
+        $(document).on('mcf.init-splash', _.once(initialize_the_front_splash));
+
+        // MCF.initFrontSplash();
     });
 
-}).call(this, this.MCF || ( this.MCF = {} ), this.jQuery, this._, this.d3 );
-
-
+}).call(this, this.MCF || (this.MCF = {}), this.jQuery, this._, this.d3);

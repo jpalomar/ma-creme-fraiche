@@ -19,7 +19,7 @@ $(function() {
                 ;
         });
 
-    }).debounce(300);
+    }).debounce(250);
 
     $videos.each(function() {
         $(this)
