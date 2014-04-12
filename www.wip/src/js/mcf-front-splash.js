@@ -16,10 +16,12 @@
         function hide_tooltip() {
             $tooltip.addClass('hidden');
         }
+
         function toggle_tooltip(_data, _index) {
             $tooltip.toggleClass('hidden');
             place_and_update_tooltip.call(this, _data, _index);
         }
+
         function show_tooltip(_data, _index) {
             $tooltip.removeClass('hidden');
             place_and_update_tooltip.call(this, _data, _index);
@@ -124,8 +126,8 @@
     function fn_refreshtip() {
         // var index = $tooltip.attr('data-time');
         // var text = time_model[index].text;
-        // $tooltip.find('.tooltip-inner').text( text );
-        $tooltip.find('.tooltip-inner').text(time_model[$tooltip.attr('data-time')].text);
+        // $tooltip_content.text( text );
+        $tooltip_content.text(time_model[$tooltip.attr('data-time')].text);
     }
 
     function update_front_splash() {
