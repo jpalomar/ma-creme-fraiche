@@ -43,20 +43,20 @@ body
 
     p
     {
-        color: #fff;
+        color: #FFF;
     }
 
     h4
     {
         padding-bottom: 3rem;
-        color: #fff;
+        color: #FFF;
         text-transform: uppercase;
     }
 }
 
 .navbar-mcf
 {
-    padding-top: 1rem;
+    padding-top: 0.9rem;
     min-height: 7.5rem;
     background-color: #105B63;
 
@@ -79,13 +79,14 @@ body
 
     .navbar-brand
     {
-        color: #fff;
+        color: #FFF;
         text-transform: uppercase;
         font-size: 1.6rem;
 
+        &.focus,
+        &:focus,
         &.hover,
-        &:hover,
-        &:focus
+        &:hover
         {
             color: #FFFAD5;
         }
@@ -102,20 +103,51 @@ body
 
     .navbar-toggle
     {
+        @include transition-property (background-color);
+        @include transition-duration(0.25s);
+        @include transition-timing-function(ease-out);
+        margin-right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        border-color: #FFF;
+        border-radius: 50%;
+
         .icon-bar
         {
-            background-color: #fff;
+            width: 18px;
+            background-color: #FFF;
         }
-        &:focus .icon-bar,
-        &:hover .icon-bar
+
+        &.focus,
+        &:focus,
+        &.hover,
+        &:hover
         {
-            background-color: #FFFAD5;
+            border-color: #FFFAD5;
+            background-color: #0c454b;
+
+            .icon-bar
+            {
+                background-color: #FFFAD5;
+            }
+        }
+
+        &.active,
+        &:active
+        {
+            border-color: darken(#FFFAD5, 5%);
+            background-color: darken(#0c454b, 5%);
+
+            .icon-bar
+            {
+                background-color: darken(#FFFAD5, 5%);
+            }
         }
     }
 
     .navbar-nav > li > a
     {
-        color: #fff;
+        color: #FFF;
 
         &.active,
         &:active,
@@ -123,17 +155,6 @@ body
         &:hover
         {
             color: #FFD34E;
-        }
-    }
-
-    .navbar-toggle
-    {
-        border-color: transparent;
-
-        &:focus,
-        &:hover
-        {
-            background-color: #0c454b;
         }
     }
 }

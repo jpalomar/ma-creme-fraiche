@@ -2,6 +2,7 @@
 $blog-pager-btn-color : #105B63;
 $blog-pager-btn-color-2 : #A33F2B;
 $blog-pager-font-color : #105B63;
+$blog-pager-font-color-2 : #A33F2B;
 
 // circular
 .pager
@@ -21,17 +22,16 @@ $blog-pager-font-color : #105B63;
 
         &.hover,
         &:hover {
-            border-color: lighten($blog-pager-btn-color, 10%);
+            border-color: lighten($blog-pager-btn-color-2, 10%);
             background-color: transparent;
-            color: lighten($blog-pager-font-color, 10%);
-            // border-color: lighten($blog-pager-btn-color-2, 10%);
+            color: lighten($blog-pager-font-color-2, 10%);
         }
 
         &.active,
         &:active {
-            border-color: darken($blog-pager-btn-color, 10%);
+            border-color: darken($blog-pager-btn-color-2, 10%);
             box-shadow : inset 0px 1px 3px rgba($color-black, .3), 0px 1px 0px rgba($color-white, 1);
-            color: darken($blog-pager-font-color, 10%);
+            color: darken($blog-pager-font-color-2, 10%);
         }
 
         // &.disabled,

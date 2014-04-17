@@ -98,6 +98,13 @@ hr {
 	font-size: 1.5rem;
 }
 
+// centers the 250px photoset
+.tmblr-photoset.visible-xs iframe {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /* glyphicon Configuration */
 .glyphicon {
 	color: #1abc9c;

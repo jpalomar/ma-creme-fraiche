@@ -562,6 +562,15 @@
 		"shouldRunBless": 1,
 		"useLibsass": 0
 		},
+	"\/test-buttons.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/test-buttons.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/tumblr\/global-tumblr-themes.css": {
 		"fileType": 16,
 		"ignore": 0,

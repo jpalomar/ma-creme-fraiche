@@ -7,10 +7,6 @@
 
 		<title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage}({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
 
-		<link rel="shortcut icon" href="{Favicon}">
-		<link rel="apple-touch-icon" href="{PortraitURL-128}" />
-		<link rel="alternate" type="application/rss+xml" href="{RSS}">
-
 	    <meta name="geo.placename" content="Dallas">
 
 		{block:Description}
@@ -114,6 +110,10 @@
 		<meta name="text:Disqus shortname" content="">
 		<meta name="text:Google analytics ID" content="UA-97144-8">
 
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="apple-touch-icon" href="{PortraitURL-128}" />
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
 		<link rel="stylesheet" href="//macremefraiche.com/assets/css/ionicons.min.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//macremefraiche.com/assets/css/mcf-blog.css">
@@ -139,6 +139,10 @@
 				<nav class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="//blog.macremefraiche.com/" title="Blog" class="{block:IndexPage}active {/block:IndexPage}"><span class="ion ion-disc"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Blog</span></a></li>
+						<li><a href="/tagged/photo" title="Photos"><span class="ion ion-camera"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Photos</span></a></li>
+						<li><a href="/tagged/audio" title="Audio"><span class="ion ion-headphone"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Audio</span></a></li>
+						<li><a href="/tagged/video" title="Video"><span class="ion ion-videocamera"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Video</span></a></li>
+						<li><a href="/tagged/link" title="Links"><span class="ion ion-link"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Links</span></a></li>
 						<li><a href="/random" title="Random"><span class="ion ion-shuffle"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Random</span></a></li>
 						<li><a href="/archive" title="Archives"><span class="ion ion-filing"></span><span class="nav-item hidden-sm hidden-md hidden-lg"> Archives</span></a></li>
 						{block:HasPages}
@@ -186,7 +190,7 @@
 			{block:Posts}
 
 			{block:Text}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-text {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -196,9 +200,8 @@
 								<span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
 							</p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -230,16 +233,15 @@
 			{/block:Text}
 
 			{block:Quote}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-quote {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-8 col-md-offset-2">
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -272,7 +274,7 @@
 			{/block:Quote}
 
 			{block:Photo}
-			<article class="tumblr-blog-post tumblr-blog-photo {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-photo {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -288,9 +290,8 @@
 							</p>
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -330,7 +331,7 @@
 			{/block:Photo}
 
 			{block:Panorama}
-			<article class="tumblr-blog-post tumblr-blog-panorama {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-panorama {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -347,9 +348,8 @@
 							</p>
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -389,7 +389,7 @@
 			{/block:Panorama}
 
 			{block:Photoset}
-			<article class="tumblr-blog-post tumblr-blog-photoset {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-photoset {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -406,9 +406,8 @@
 							</p>
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -443,7 +442,7 @@
 			{/block:Photoset}
 
 			{block:Video}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-video {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -459,9 +458,8 @@
 							</p>
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -492,7 +490,7 @@
 			{/block:Video}
 
 			{block:Audio}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-audio {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -509,9 +507,8 @@
 							</p>
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -545,7 +542,7 @@
 			{/block:Audio}
 
 			{block:Link}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-link {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
@@ -556,9 +553,8 @@
 							</p>
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -588,7 +584,7 @@
 			{/block:Link}
 
 			{block:Chat}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-chat {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
@@ -602,9 +598,8 @@
 								{/block:ContentSource}
 							</p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>
@@ -641,16 +636,15 @@
 			{/block:Chat}
 
 			{block:Answer}
-			<article class="tumblr-blog-post {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+			<article class="tumblr-blog-post tumblr-blog-post-answer {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-8 col-md-offset-2">
 							<p>
 								<div class="tumblr-blog-date">
-									<span class="ion-calendar"></span>
 									{block:Date}
-									<a href="{Permalink}">{Year} {Month} {DayOfMonth}</a>
+									<a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
 									{/block:Date}
 								</div class="tumblr-blog-date">
 							</p>

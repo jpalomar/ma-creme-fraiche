@@ -1,3 +1,4 @@
+
 @include keyframes( mcf-fadeIn ) {
     0% {
         opacity: 0;
@@ -8,11 +9,11 @@
 }
 
 .mcf-fade-in {
-    opacity: 0;     // init state
     @include animation-name( mcf-fadeIn ); // load the keyframe name
     @include animation-duration( 1s );
     @include animation-timing-function( $ease-in-back );
     @include animation-fill-mode( forwards );
+    opacity: 0;     // init state
 }
 
 #id-front-splash {
@@ -24,7 +25,7 @@
         @include transition-property (fill);
         @include transition-duration(0.25s);
         @include transition-timing-function(ease-out);
-        stroke-width:1px;
-        stroke:#7f8c8d;
+        // stroke-width:1px;
+        // stroke:#7f8c8d;
     }
 }
