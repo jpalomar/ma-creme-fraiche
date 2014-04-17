@@ -10,15 +10,15 @@ $blog-pager-font-color-2 : #A33F2B;
     li > a {
         @include transition-property(all);
         padding: 0;
-        min-width: 10rem;
-        min-height: 10rem;
+        min-width: 8rem;
+        min-height: 8rem;
         border-width: 2px;
         border-color: $blog-pager-btn-color;
         border-radius: 50%;
         color : $blog-pager-font-color;
         vertical-align: middle;
         text-align: center;
-        line-height: 10rem;
+        line-height: 8rem;
 
         &.hover,
         &:hover {
