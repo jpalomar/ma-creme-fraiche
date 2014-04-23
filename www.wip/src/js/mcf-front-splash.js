@@ -14,16 +14,16 @@
         }
 
         function hide_tooltip() {
-            $tooltip.addClass('hidden');
+            $tooltip.removeClass('in');
         }
 
         function toggle_tooltip(_data, _index) {
-            $tooltip.toggleClass('hidden');
+            $tooltip.toggleClass('in');
             place_and_update_tooltip.call(this, _data, _index);
         }
 
         function show_tooltip(_data, _index) {
-            $tooltip.removeClass('hidden');
+            $tooltip.addClass('in');
             place_and_update_tooltip.call(this, _data, _index);
         }
 
@@ -57,7 +57,7 @@
                 return d3_color(_data.value);
             });
 
-        if ($tooltip.is(':visible')) {
+        if ($tooltip.is('.in')) {
             fn_refreshtip();
         }
 
@@ -173,7 +173,7 @@
             .attr('id', 'id-svg-clock');
 
         $tooltip = $($.fn.tooltip.Constructor.DEFAULTS.template)
-            .addClass('top in mcf-tooltip hidden')
+            .addClass('top mcf-tooltip fade')
             .prependTo('body');
 
         $tooltip_content = $tooltip.find('.tooltip-inner');
