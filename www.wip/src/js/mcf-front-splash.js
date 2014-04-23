@@ -174,7 +174,7 @@
 
         $tooltip = $($.fn.tooltip.Constructor.DEFAULTS.template)
             .addClass('top mcf-tooltip fade')
-            .prependTo('body');
+            .prependTo(document.body);
 
         $tooltip_content = $tooltip.find('.tooltip-inner');
 
