@@ -1,5 +1,5 @@
 
-(function ($, _, Backbone, undefined) {
+(function ($, _, Backbone) {
 
 // local namespace
 var GLOBAL = this;
