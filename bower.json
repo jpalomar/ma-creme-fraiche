@@ -1,0 +1,26 @@
+{
+  "name": "ma-creme-fraiche",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jpalomar/ma-creme-fraiche",
+  "authors": [
+    "jpalomar"
+  ],
+  "description": "source files for the ma creme fraiche",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.16",
+    "modernizr": "~2.8.3",
+    "bootstrap-sass": "~3.3.3",
+    "ionicons": "~2.0.1",
+    "jquery": "~2.1.3"
+  }
+}

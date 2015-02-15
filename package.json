@@ -1,0 +1,24 @@
+{
+  "name": "ma-creme-fraiche",
+  "version": "0.0.0",
+  "description": "src files for ma creme fraiche",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpalomar/ma-creme-fraiche.git"
+  },
+  "author": "jpalomar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpalomar/ma-creme-fraiche/issues"
+  },
+  "homepage": "https://github.com/jpalomar/ma-creme-fraiche",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "load-grunt-config": "^0.16.0",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.0.0"
+  }
+}
