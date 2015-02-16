@@ -14,7 +14,9 @@
     "bower_components",
     "src/assets/libs",
     "test",
-    "tests"
+    "tests",
+    "tumblr",
+    "playground"
   ],
   "dependencies": {
     "requirejs": "~2.1.16",
