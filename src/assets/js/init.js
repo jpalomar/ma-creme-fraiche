@@ -50,5 +50,6 @@ requirejs.config({
 // start loading modules
 requirejs([
     'modernizr',
-    'ga'
+    'ga',
+    'js/mcf',
 ]);
