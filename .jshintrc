@@ -87,8 +87,6 @@
         "requirejs" : true,
         "require"   : true,
         "define"    : true,
-        "Modernizr" : true,
-        "d3"        : true,
         "_"         : true
     }
 }
