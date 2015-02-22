@@ -1,4 +1,4 @@
-define([
+require([
     'jquery',
 
     // get the mcf front splash
@@ -8,9 +8,11 @@ define([
     splash
 ) { 'use strict';
 
-    // init page
-    $(function(){
-        splash.init();
-    });
 
+// init page
+$(function(){
+    splash.init();
 });
+
+
+}); // end mcf
