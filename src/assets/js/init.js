@@ -13,7 +13,7 @@ requirejs.config({
             'libs/jquery/dist/jquery',   // backup
         ],
         'underscore': [
-            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
+            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.1/underscore-min',
             'libs/underscore/underscore', // backup
         ],
         'd3': [
