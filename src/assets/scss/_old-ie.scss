@@ -1,18 +1,13 @@
-.no-js
+.lt-ie10
 {
 	.tumblr-blog-post
 	{
 		display : none !important;
 	}
 
-	.no-js-message
+	.old-ie-message
 	{
 		display: block !important;
 		visibility: visible !important;
 	}
-
-    // unstick the mcf-navbar
-    .navbar-mcf {
-        position: relative !important;
-    }
 }

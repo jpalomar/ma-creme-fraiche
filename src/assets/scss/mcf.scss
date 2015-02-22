@@ -4,13 +4,18 @@
 // requires bourbon.io import lib
 @import 'bourbon';
 
+// load vars
 @import 'mcf-vars';
 
+// load common global rules
 @import 'mcf-resets';
 @import 'mcf-general';
 
-@import 'mcf-typography';
+// errors
 @import 'no-js';
+@import 'old-ie';
+
+@import 'mcf-typography';
 @import 'mcf-nav';
 @import 'mcf-front-splash';
 @import 'mcf-tooltip';
