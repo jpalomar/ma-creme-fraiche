@@ -8,7 +8,7 @@ define([
     d3
 ) { 'use strict';
 
-    function tick() {
+    function do_tick() {
 
         function place_and_update_tooltip (_data, _index) {
             var xy = d3.mouse(document.documentElement);
@@ -37,14 +37,14 @@ define([
 
         // store for reference
         var previousValue = [];
-        time_model = get_the_time();
+        data_model_of_time = do_get_the_time();
 
         d3_paths
-            .each(function(_data, _index) {
+            .each(function (_data, _index) {
                 previousValue[_index] = _data.value;
             })
-            .data(time_model)
-            .each(function(_data, _index) {
+            .data(data_model_of_time)
+            .each(function (_data, _index) {
                 _data.previousValue = previousValue[_index];
             });
 
@@ -54,14 +54,14 @@ define([
             .on('mouseup', toggle_tooltip )
             .transition()
             .ease('back')
-            .attrTween('d', function(_data) {
-                var i = d3.interpolateNumber(_data.previousValue, _data.value);
-                return function(_tween) {
-                    _data.value = i(_tween);
+            .attrTween('d', function (_data) {
+                var interpolateNumber = d3.interpolateNumber(_data.previousValue, _data.value);
+                return function (_tween) {
+                    _data.value = interpolateNumber(_tween);
                     return d3_arc(_data);
                 };
             })
-            .style('fill', function(_data) {
+            .style('fill', function (_data) {
                 return d3_color(_data.value);
             });
 
@@ -69,41 +69,39 @@ define([
             fn_refreshtip();
         }
 
-        timeout = _(tick).delay(1000 - _.now() % 1000);
-        // console.log(counter++);
+        timeout_reference = _(do_tick).delay(1000 - _.now() % 1000);
     }
-    // var counter = 0;
 
-    function get_the_time() {
+    function do_get_the_time() {
         var now = new Date();
         return [{
             'index': 0.7,
-            'text': formatSecond(now),
+            'text': do_format_second(now),
             'value': now.getSeconds() / 60
         }, {
             'index': 0.6,
-            'text': formatMinute(now),
+            'text': do_format_minute(now),
             'value': now.getMinutes() / 60
         }, {
             'index': 0.5,
-            'text': formatHour(now),
+            'text': do_format_hour(now),
             'value': now.getHours() / 24
         }, {
             'index': 0.3,
-            'text': formatDay(now),
+            'text': do_format_day(now),
             'value': now.getDay() / 7
         }, {
             'index': 0.2,
-            'text': formatDate(now),
+            'text': do_format_date(now),
             'value': (now.getDate() - 1) / (32 - new Date(now.getYear(), now.getMonth(), 32).getDate())
         }, {
             'index': 0.1,
-            'text': formatMonth(now),
+            'text': do_format_month(now),
             'value': now.getMonth() / 12
         }];
     }
 
-    function create_the_clock(_d3_selection, _width, _height) {
+    function do_create_the_clock(_d3_selection, _width, _height) {
 
         var d3_group = this
             .attr({
@@ -118,7 +116,7 @@ define([
             });
 
         d3_paths = d3_group.selectAll('g')
-            .data(get_the_time)
+            .data(do_get_the_time)
             .enter().append('g');
 
         d3_paths.append('path');
@@ -126,89 +124,111 @@ define([
         radius = Math.min(_width, _height) / 2;
     }
 
-    function empty_the_splash() {
+    function do_empty_the_clock() {
         // empty
         this.selectAll('*').remove();
     }
 
     function fn_refreshtip() {
         // var index = $tooltip.attr('data-time');
-        // var text = time_model[index].text;
+        // var text = data_model_of_time[index].text;
         // $tooltip_content.text( text );
-        $tooltip_content.text(time_model[$tooltip.attr('data-time')].text);
+        $tooltip_content.text(data_model_of_time[$tooltip.attr('data-time')].text);
     }
 
-    function update_front_splash() {
-        clearTimeout(timeout);
+    function do_view_update_of_clock() {
+        clearTimeout(timeout_reference);
         // empty
-        d3_svg.call(empty_the_splash)
-            .call(create_the_clock, $container.width(), $container.height());
+        d3_svg
+            .call(do_empty_the_clock)
+            .call(do_create_the_clock, $container.width(), $container.height())
+            ;
 
-        d3.transition().each(tick);
+        d3.transition()
+            .each(do_tick)
+            ;
+    }
+
+    function do_interpolated_string(_arg1, _arg2) {
+        var interpolateString = d3.interpolateString(_arg1, _arg2);
+        return function (_text) {
+            return d3.hsl( interpolateString(_text) );
+        };
+    }
+
+    function do_endAngle (_data) {
+        return _data.value * 2 * Math.PI;
+    }
+
+    function do_innerRadius (_data) {
+        return _data.index * radius;
+    }
+
+    function do_outerRadius (_data) {
+        return (_data.index + spacing) * radius;
     }
 
     function initialize_the_front_splash() {
         $container = $(selector);
-        formatSecond = d3_time_format('%S s');
-        formatMinute = d3_time_format('%I:%M %p');
-        formatHour = d3_time_format('%I %p');
-        formatDay = d3_time_format('%a, %b %d');
-        formatDate = d3_time_format('%b %d');
-        formatMonth = d3_time_format('%b %Y');
+        do_format_second = d3_time_format('%S s');
+        do_format_minute = d3_time_format('%I:%M %p');
+        do_format_hour = d3_time_format('%I %p');
+        do_format_day = d3_time_format('%a, %b %d');
+        do_format_date = d3_time_format('%b %d');
+        do_format_month = d3_time_format('%b %Y');
+        do_resize_svg_clock = _(do_view_update_of_clock).debounce(250);
 
         d3_color = d3.scale.linear()
-            .range(['hsl(180,100%,75%)', 'hsl(360,100%,75%)'])
-            .interpolate(function(_arg1, _arg2) {
-                var i = d3.interpolateString(_arg1, _arg2);
-                return function(_text) {
-                    return d3.hsl(i(_text));
-                };
-            });
+            .range(['hsl(99,22%,75%)', 'hsl(350,71%,67%)'])
+            .interpolate(do_interpolated_string)
+            ;
 
         d3_arc = d3.svg.arc()
             .startAngle(0)
-            .endAngle(function(_data) {
-                return _data.value * 2 * Math.PI;
-            })
-            .innerRadius(function(_data) {
-                return _data.index * radius;
-            })
-            .outerRadius(function(_data) {
-                return (_data.index + spacing) * radius;
-            });
+            .endAngle( do_endAngle )
+            .innerRadius( do_innerRadius )
+            .outerRadius( do_outerRadius )
+            ;
 
         d3_svg = d3.select(selector).append('svg')
-            .attr('id', 'id-svg-clock');
+            .attr('id', 'id-svg-clock')
+            .classed('mcf-fade-in mcf-fade-in-longer',true)
+            ;
 
         $tooltip = $($.fn.tooltip.Constructor.DEFAULTS.template)
-            .addClass('top mcf-tooltip fade')
-            .prependTo(document.body);
+            .addClass( 'mcf-tooltip top fade' )
+            .prependTo(document.body)
+            ;
 
         $tooltip_content = $tooltip.find('.tooltip-inner');
 
-        $(window).resize(update_front_splash_svg).resize();
+        $(window)
+            .on('resize.mcf.svg.clock', do_resize_svg_clock)
+            .resize()
+            ;
     }
 
     var spacing = 0.09,
         selector = '#id-front-splash',
         d3_time_format = d3.time.format,
-        update_front_splash_svg = _(update_front_splash).debounce(250),
-        time_model,
-        timeout,
+        do_resize_svg_clock,
+        data_model_of_time,
+        timeout_reference,
         radius,
         $container,
         $tooltip,
         $tooltip_content,
-        formatSecond,
-        formatMinute,
-        formatHour,
-        formatDay,
-        formatDate,
-        formatMonth,
+        do_format_second,
+        do_format_minute,
+        do_format_hour,
+        do_format_day,
+        do_format_date,
+        do_format_month,
         d3_svg,
         d3_paths,
         d3_color,
-        d3_arc;
+        d3_arc
+        ;
 
     return {
         'init' : _.once(initialize_the_front_splash)
