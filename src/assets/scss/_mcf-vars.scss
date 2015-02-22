@@ -6,3 +6,34 @@ $mcf-default-timing-function:  $ease-out-quad;
 // colors
 $mcf-color-black:  $ease-out-quad;
 
+// color palette
+$color-salmon   : #E77084;
+$color-pink     : #F2274C;
+$color-olive    : #13363B;
+$color-aqua     : #267B6C;
+$color-seafoam  : #BACDB0;
+
+// blacks
+$color-black-flat : #232323;
+$color-black-rich : cmyk(63, 52, 51, 100);
+$color-black-cool : cmyk(60, 0, 0, 100); // bluish tone
+$color-black-warm : cmyk(0, 60, 30, 100); // reddish tone
+$color-black-designer : cmyk(70, 50, 30, 100);
+
+
+// greys
+$color-gray-base:              #000 !default;
+$color-gray-darker:            lighten($color-gray-base, 13.5%) !default; // #222
+$color-gray-dark:              lighten($color-gray-base, 20%) !default;   // #333
+$color-gray:                   lighten($color-gray-base, 33.5%) !default; // #555
+$color-gray-light:             lighten($color-gray-base, 46.7%) !default; // #777
+$color-gray-lighter:           lighten($color-gray-base, 93.5%) !default; // #eee
+
+// brand palette
+$nav-bg : $color-olive;
+$hero-bg : $color-aqua;
+
+
+$brand-accent : $color-salmon;
+
+$body-text-color-base : #2e2e2e;

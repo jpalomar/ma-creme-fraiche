@@ -5,3 +5,10 @@ body
     height: 100%;
 }
 
+[unresolved]
+.unresolved
+{
+    opacity: 0;
+    display: block;
+    overflow: hidden;
+}

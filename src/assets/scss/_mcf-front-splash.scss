@@ -8,9 +8,15 @@
     }
 }
 
-.mcf-fade-in {
+.mcf-fade-in
+{
+    &.mcf-fade-in-longer
+    {
+        @include animation-duration( 1s );
+    }
+
     @include animation-name( mcf-fadeIn ); // load the keyframe name
-    @include animation-duration( 1s );
+    @include animation-duration( 200ms );
     @include animation-timing-function( $ease-in-back );
     @include animation-fill-mode( forwards );
     opacity: 0;     // init state

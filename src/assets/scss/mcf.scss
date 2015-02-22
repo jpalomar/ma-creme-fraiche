@@ -4,7 +4,11 @@
 // requires bourbon.io import lib
 @import 'bourbon';
 
+@import 'mcf-vars';
+
 @import 'mcf-resets';
+@import 'mcf-general';
+
 @import 'mcf-typography';
 @import 'no-js';
 @import 'mcf-nav';
