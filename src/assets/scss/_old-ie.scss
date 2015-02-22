@@ -1,13 +1,13 @@
 .lt-ie10
 {
-	.tumblr-blog-post
-	{
-		display : none !important;
-	}
+    // unstick the mcf-navbar
+    .navbar-mcf {
+        position: relative !important;
+    }
 
-	.old-ie-message
-	{
-		display: block !important;
-		visibility: visible !important;
-	}
+    .old-ie-message
+    {
+        display: block !important;
+        visibility: visible !important;
+    }
 }

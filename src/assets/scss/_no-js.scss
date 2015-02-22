@@ -1,5 +1,10 @@
 .no-js
 {
+    // unstick the mcf-navbar
+    .navbar-mcf {
+        position: relative !important;
+    }
+
 	.tumblr-blog-post
 	{
 		display : none !important;
@@ -10,9 +15,4 @@
 		display: block !important;
 		visibility: visible !important;
 	}
-
-    // unstick the mcf-navbar
-    .navbar-mcf {
-        position: relative !important;
-    }
 }
