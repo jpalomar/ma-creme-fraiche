@@ -1,13 +1,11 @@
+.old-ie-message {
+    display: none;
+}
+
 .lt-ie10
 {
-    // unstick the mcf-navbar
-    .navbar-mcf {
-        position: relative !important;
-    }
-
     .old-ie-message
     {
-        display: block !important;
-        visibility: visible !important;
+        display: block;
     }
 }

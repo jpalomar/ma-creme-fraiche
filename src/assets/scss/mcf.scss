@@ -11,11 +11,12 @@
 @import 'mcf-resets';
 @import 'mcf-general';
 
-// errors
-@import 'no-js';
-@import 'old-ie';
-
 @import 'mcf-typography';
 @import 'mcf-nav';
 @import 'mcf-front-splash';
 @import 'mcf-tooltip';
+
+
+// errors
+@import 'no-js';
+@import 'old-ie';

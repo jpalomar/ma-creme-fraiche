@@ -9,7 +9,28 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon shortcut" href="/favicon.png" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+
+<link rel="icon" type="image/png" href="/assets/ico/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/assets/ico/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/assets/ico/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/assets/ico/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/assets/ico/favicon-16x16.png" sizes="16x16">
+
+<link rel="manifest" href="/assets/ico/manifest.json">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+<meta name="theme-color" content="#3e3e3e">
 
 <link rel="stylesheet" href="/assets/css/ionicons.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -20,7 +41,6 @@
 </head>
 
 <body >
-
 <!-- *&*&*&*&*&*& NAV *&*&*&*&*&*& -->
 <header class="header navbar navbar-fixed-top navbar-default navbar-mcf">
     <div class="container">
@@ -53,15 +73,16 @@
         <!--/.navbar-collapse -->
     </div>
 </header>
-
-<div class="mcf-body mcf-fade-in">
+<main class="mcf-body mcf-resolver" role="main">
 
     <!-- *&*&*&*&*&*& HEADER *&*&*&*&*&*& -->
     <div id="id-top-header">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text-center">
-                    <img src="/assets/img/mcf-icon-128x128.png" alt="[ ma creme fraiche ]" class="img-circle">
+                <div class="col-xs-5 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+                    <div class="center-block h6">
+                        <img src="/assets/img/icon-mcf-250x250-png8.png" alt="[ ma creme fraiche ]" class="img-circle img-responsive">
+                    </div>
                 </div>
                 <!-- /col-sm-8 -->
             </div>
@@ -92,14 +113,7 @@
     </div>
     <!-- /#front-splash -->
 
-    <!-- *&*&*&*&*&*& NO JS *&*&*&*&*&*& -->
-    <div class="jumbotron hidden no-js-message">
-        <div class="container">
-            <p class="h1 text-center">Seriously, no javascript? C'mon!</p>
-        </div>
-    </div>
-</div class="mcf-body">
-
+</main class="mcf-body">
 <footer id="foot-clan" class="footer">
     <div class="container">
         <div class="row">
@@ -112,6 +126,17 @@
     <!-- /.container -->
 </footer>
 <!-- /#foot-clan -->
+
+<div class="no-js-message bg-danger">
+    <div class="container">
+        <p class="h1 text-center">Seriously, no javascript? C'mon!</p>
+    </div>
+</div>
+<div class="old-ie-message bg-info">
+    <div class="container">
+        <p class="h1 text-center">Your browser is <em>ancient!</em> <a href="//browsehappy.com/" target="new">Upgrade your browser</a> to better experience the internet.</p>
+    </div>
+</div>
 
 </body>
 
