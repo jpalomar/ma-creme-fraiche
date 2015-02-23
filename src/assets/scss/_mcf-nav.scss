@@ -1,9 +1,4 @@
 
-html,
-body
-{
-    height: 100%;
-}
 
 /*  WRAP SECTIONS
 ================== */
@@ -32,25 +27,6 @@ body
     color: $color-gray-lighter;
 }
 
-#foot-clan
-{
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    min-height: 10rem;
-    background-color: $color-gray-lighter;
-
-    p,
-    h4
-    {
-        color: $color-gray;
-    }
-
-    h4
-    {
-        padding-bottom: 3rem;
-        text-transform: uppercase;
-    }
-}
 
 .navbar-mcf
 {

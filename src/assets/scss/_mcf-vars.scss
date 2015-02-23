@@ -13,14 +13,6 @@ $color-olive    : #13363B;
 $color-aqua     : #267B6C;
 $color-seafoam  : #BACDB0;
 
-// blacks
-$color-black-flat : #232323;
-$color-black-rich : cmyk(63, 52, 51, 100);
-$color-black-cool : cmyk(60, 0, 0, 100); // bluish tone
-$color-black-warm : cmyk(0, 60, 30, 100); // reddish tone
-$color-black-designer : cmyk(70, 50, 30, 100);
-
-
 // greys
 $color-gray-base:              #000 !default;
 $color-gray-darker:            lighten($color-gray-base, 13.5%) !default; // #222

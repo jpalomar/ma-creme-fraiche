@@ -10,9 +10,12 @@
 // load common global rules
 @import 'mcf-resets';
 @import 'mcf-general';
-
 @import 'mcf-typography';
+
+// base components
 @import 'mcf-nav';
+@import 'mcf-footer';
+
 @import 'mcf-front-splash';
 @import 'mcf-tooltip';
 
