@@ -28,6 +28,7 @@ node_modules
 _mcf
 src/assets/libs
 src/**/*.html
+src/**/css
 
 # unwanted system configs
 codekit-*
