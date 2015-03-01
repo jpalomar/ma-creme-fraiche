@@ -27,6 +27,7 @@ node_modules
 # built output
 _mcf
 src/assets/libs
+src/**/*.html
 
 # unwanted system configs
 codekit-*
