@@ -1,0 +1,37 @@
+{block:Answer}
+<article class="tumblr-blog-post tumblr-blog-post-answer {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <!-- @include tumblr-content-date -->
+                <p>
+                    <img src="{AskerPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                    <span class="tumblr-blog-author">{Asker} asked</span class="tumblr-blog-author">
+                </p>
+                <a href="{Permalink}"><h4>{Question}</h4></a>
+                <dl class="dl-horizontal">
+                    {block:Answerer}
+                    <dt>
+                        <img src="{AnswererPortraitURL-16}" width="16px" height="16px" class="img-circle">
+                        <span class="tumblr-blog-author">{Answerer}</span class="tumblr-blog-author">
+                    </dt>
+                    <dd>{Answer}</dd>
+                    {/block:Answerer}
+
+                    <dt>
+                        <img src="{PostAuthorPortraitURL-16}" width="16px" height="16px" class="img-circle">
+                        <span class="tumblr-blog-author"><a href="{PostAuthorURL}">{PostAuthorName}</a></span class="tumblr-blog-author">
+                    </dt>
+                    <dd>{Replies}</dd>
+                </dl>
+
+                <br />
+                <!-- @include tumblr-content-hastags -->
+                <!-- @include tumblr-content-goback -->
+            </div>
+
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</article><!-- .blog-post -->
+{/block:Answer}

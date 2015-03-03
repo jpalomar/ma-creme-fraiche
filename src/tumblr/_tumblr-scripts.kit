@@ -1,0 +1,49 @@
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js"></script>
+<script type="text/javascript">window.requirejs || document.write('<script type="text\/javascript" src="\/\/macremefraiche.com\/\/assets\/libs\/requirejs\/require.js"><\/script>');</script>
+<script type="text/javascript">
+// require config... duh
+requirejs.config({
+    // initial pwd is /assets/
+    'baseUrl': '//macremefraiche.com/assets/',
+    'paths': {
+        // libs
+        'jquery': [
+            '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min',
+            'libs/jquery/dist/jquery',   // backup
+        ],
+        'bootstrap': [
+            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min',
+            'libs/jquery/dist/jquery',   // backup
+        ],
+        'underscore': [
+            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min',
+            'libs/underscore/underscore', // backup
+        ],
+        'd3': [
+            '//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min',
+            'libs/d3/d3',                // backup
+        ],
+        'modernizr': [
+            '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min',
+            'libs/modernizr/modernizr',  // backup
+        ]
+    },
+    'shim': {
+        // require jquery when requiring bootstrap
+        'bootstrap': {
+            'deps': ['jquery'],
+            // returns back the window.jQuery object
+            'exports': 'jQuery'
+        },
+        'modernizr': {
+            'exports': 'Modernizr'
+        }
+    }
+});
+
+// start loading modules
+requirejs([
+    'modernizr',
+    'bootstrap'
+]);
+</script>

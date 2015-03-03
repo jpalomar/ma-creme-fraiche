@@ -1,0 +1,32 @@
+{block:PermalinkPage}
+<article class="tumblr-blog-post bg-tumblr-alt ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <h4>{block:NoteCount} {NoteCountWithLabel} {/block:NoteCount}</h4>
+                {block:PostNotes}
+                    {PostNotes-16}
+                {/block:PostNotes}
+                {block:Date}
+                {block:IfDisqusShortname}
+                <section class="comments">
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                      (function() {
+                       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                       dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+                       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                </section>
+                {/block:IfDisqusShortname}
+                {/block:Date}
+            </div>
+
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</article><!-- .blog-post -->
+{/block:PermalinkPage}

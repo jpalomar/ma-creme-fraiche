@@ -1,0 +1,34 @@
+{block:Chat}
+<article class="tumblr-blog-post tumblr-blog-post-chat {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                    <span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+                    {block:ContentSource}
+                    via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                    {SourceTitle}
+                    <span class="tumblr-blog-author"></span class="tumblr-blog-author">
+                    {/block:ContentSource}
+                </p>
+                <!-- @include tumblr-content-date -->
+                <a href="{URL}"><h4>{block:Title}{Title}{/block:Title}</h4></a>
+                <dl class="dl-horizontal">
+                {block:Lines}
+                    {block:Label}
+                    <dt class="{Alt} user_{UserNumber}"><span class="tumblr-blog-author">{Label}</span class="tumblr-blog-author"></dt>
+                    {/block:Label}
+                    <dd>{Line}</dd>
+                {/block:Lines}
+                </dl>
+                <br />
+                <!-- @include tumblr-content-hastags -->
+                <!-- @include tumblr-content-goback -->
+
+            </div>
+
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</article><!-- .blog-post -->
+{/block:Chat}

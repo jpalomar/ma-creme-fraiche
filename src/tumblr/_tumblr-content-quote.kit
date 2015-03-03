@@ -1,0 +1,24 @@
+{block:Quote}
+<article class="tumblr-blog-post tumblr-blog-post-quote {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <!-- @include tumblr-content-date -->
+                <a href="{Permalink}">
+                    <h3>{Quote}</h3>
+                </a>
+                {block:Source}{Source}{/block:Source}
+                <br />
+                <!-- @include tumblr-content-hastags -->
+                <!-- @include tumblr-content-goback -->
+
+            </div>
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</article>
+<!-- .blog-post -->
+{/block:Quote}

@@ -1,0 +1,29 @@
+{block:Text}
+<article class="tumblr-blog-post tumblr-blog-post-text {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                    <span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+                </p>
+                <!-- @include tumblr-content-date -->
+
+                <a href="{Permalink}">
+                    <h4>{block:Title}{Title}{/block:Title}</h4>
+                </a>
+                {Body}
+                <br />
+                <!-- @include tumblr-content-hastags -->
+                <!-- @include tumblr-content-goback -->
+
+            </div><!-- /col -->
+
+        </div><!-- /row -->
+
+    </div><!-- /container -->
+
+</article>
+<!-- .blog-post -->
+{/block:Text}

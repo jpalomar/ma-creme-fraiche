@@ -1,0 +1,109 @@
+<title>{Title}{block:TagPage} - {Tag}{/block:TagPage}{block:SearchPage}({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="geo.placename" content="Dallas" />
+
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+{block:PostSummary}
+<meta property="og:title" content="{PostSummary} - {Name}" />
+{/block:PostSummary}
+
+<meta property="og:site_name" content="{Title}"/>
+
+{block:IndexPage}
+<meta property="og:title" content="{Title}"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:description" content="{MetaDescription}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:IndexPage}
+
+{block:PermalinkPage}
+<meta property="og:url" content="{Permalink}"/>
+<meta property="og:type" content="article"/>
+{block:Posts}
+
+{block:Text}
+{block:Title}
+<meta property="og:title" content="{PlaintextTitle}"/>
+{/block:Title}
+<meta property="og:description" content="{PlaintextBody}"/>
+{/block:Text}
+
+{block:Photo}
+<meta property="og:image" content="{PhotoURL-500}"/>
+{block:Caption}
+<meta property="og:description" content="{PlaintextCaption}"/>
+{/block:Caption}
+{/block:Photo}
+
+{block:Photoset}
+{block:Photos}
+<meta property="og:image" content="{PhotoURL-500}"/>
+{/block:Photos}
+{block:Caption}
+<meta property="og:description" content="{PlaintextCaption}"/>
+{/block:Caption}
+{/block:Photoset}
+
+{block:Quote}
+<meta property="og:title" content="{PlaintextQuote}"/>
+<meta property="og:description" content="{PlaintextSource}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Quote}
+
+{block:Link}
+<meta property="og:title" content="{PlaintextName}"/>
+<meta property="og:description" content="{PlaintextDescription}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Link}
+
+{block:Chat}
+<meta property="og:title" content="{PlaintextTitle}"/>
+<meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Chat}
+
+{block:Audio}
+<meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+<meta property="og:description" content="{PlaintextCaption}"/>
+{block:AlbumArt}
+<meta property="og:image" content="{AlbumArtURL}"/>
+{/block:AlbumArt}
+{/block:Audio}
+
+{block:Video}
+{block:Caption}
+<meta property="og:description" content="{PlaintextCaption}"/>
+{/block:Caption}
+{/block:Video}
+
+{block:Answer}
+<meta property="og:title" content="{PlaintextQuestion}"/>
+<meta property="og:description" content="{PlaintextAnswer}"/>
+<meta property="og:image" content="{PortraitURL-128}"/>
+{/block:Answer}
+
+{/block:Posts}
+{/block:PermalinkPage}
+
+<meta name="text:Social Heading" content=""/>
+<meta name="text:Contact Heading" content=""/>
+<meta name="text:Contact Address" content=""/>
+<meta name="text:Contact Phone" content=""/>
+<meta name="text:Contact Email" content=""/>
+<meta name="text:Facebook Username" content=""/>
+<meta name="text:Dribbble Username" content=""/>
+<meta name="text:Twitter Username" content=""/>
+
+<meta name="text:Disqus shortname" content="" />
+<meta name="text:Google analytics ID" content="UA-97144-8" />
+
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="apple-touch-icon" href="{PortraitURL-128}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+

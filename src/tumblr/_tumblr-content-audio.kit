@@ -1,0 +1,33 @@
+{block:Audio}
+<article class="tumblr-blog-post tumblr-blog-post-audio {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    {block:AlbumArt}
+                    <img src="{AlbumArtURL}" width="50px" height="50px" class="img-circle">
+                    {/block:AlbumArt}
+                    <span class="tumblr-blog-author">
+                        {block:Artist}
+                        {Artist}
+                        {/block:Artist}
+                    </span class="tumblr-blog-author">
+                </p>
+                <!-- @include tumblr-content-date -->
+                <h4>
+                    {block:TrackName}{TrackName}{/block:TrackName}
+                    {block:Album}from {Album}{/block:Album}
+                </h4>
+                <p>{AudioPlayerBlack}</p>
+                {block:Caption}{Caption}{/block:Caption}
+                <br />
+                <!-- @include tumblr-content-hastags -->
+                <!-- @include tumblr-content-goback -->
+
+            </div>
+
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</article><!-- .blog-post -->
+{/block:Audio}

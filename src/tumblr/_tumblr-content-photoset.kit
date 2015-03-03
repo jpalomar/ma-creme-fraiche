@@ -1,0 +1,52 @@
+{block:Photoset}
+<article class="tumblr-blog-post tumblr-blog-post-photoset {block:Odd}bg-tumblr-odd{/block:Odd} {block:Even}bg-tumblr-alt{/block:Even} ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    <img src="{PostAuthorPortraitURL-64}" width="50px" height="50px" class="img-circle">
+                    <span class="tumblr-blog-author">{PostAuthorName}</span class="tumblr-blog-author">
+
+                    {block:ContentSource}
+                    via <img src="http://g.etfv.co/{SourceURL}" width="16px" height="16px" class="img-circle">
+                    {SourceTitle}
+                    <span class="tumblr-blog-author"></span class="tumblr-blog-author">
+                    {/block:ContentSource}
+                </p>
+                <p>
+                    <div class="tumblr-blog-date">
+                        {block:Date}
+                        <a href="{Permalink}"><span class="ion-calendar"></span> {Year} {Month} {DayOfMonth}</a>
+                        {/block:Date}
+                    </div class="tumblr-blog-date">
+                </p>
+                <div class="tmblr-photoset hidden-xs">
+                {Photoset}
+                </div>
+                <div class="tmblr-photoset visible-xs">
+                {Photoset-250}
+                </div>
+                {block:Caption}{Caption}{/block:Caption}
+                <br />
+                <p>
+                    {block:HasTags}
+                    <div class="tumblr-blog-tags">
+                        TAGS: {block:Tags}
+                        <a href="{TagURL}">{Tag}</a>
+                        {/block:Tags}
+                    </div class="tumblr-blog-tags">
+                    {/block:HasTags}
+                </p>
+                {block:PermalinkPage}
+                <hr />
+                <ul class="pager">
+                    <li class="previous"><a href="javascript:history.back()">&laquo; Back</a></li>
+                </ul>
+                {/block:PermalinkPage}
+            </div>
+
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</article><!-- .blog-post -->
+{/block:Photoset}
