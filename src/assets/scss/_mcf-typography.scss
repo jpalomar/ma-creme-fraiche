@@ -1,11 +1,11 @@
 
-@import url(//fonts.googleapis.com/css?family=Maven+Pro:700);
-@import url(//fonts.googleapis.com/css?family=Montserrat:400);
+@import url($url-font-family-header);
+@import url($url-font-family-body);
 
 body
 {
     color: $body-text-color-base;
-	font-family: 'Montserrat', sans-serif;
+	font-family: $font-family-body;
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
 }
@@ -25,6 +25,11 @@ h6,
 .brand-name
 {
 	font-weight: 700;
-	font-family: 'Maven Pro', sans-serif;
+	font-family: $font-family-header;
 }
 
+.brand-name
+{
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}

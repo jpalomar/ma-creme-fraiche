@@ -1,0 +1,11 @@
+
+/* makes the font 33% larger relative to the icon container */
+.#{$icon-prefix}-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+.#{$icon-prefix}-2x { font-size: 2em; }
+.#{$icon-prefix}-3x { font-size: 3em; }
+.#{$icon-prefix}-4x { font-size: 4em; }
+.#{$icon-prefix}-5x { font-size: 5em; }

@@ -2,16 +2,16 @@
 
 /*  WRAP SECTIONS
 ================== */
-#id-top-header
+.mcf-brandbanner
 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
+    margin-bottom: $line-height-computed;
 
-.brand-name
-{
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
+    .mcf-brandbanner-img
+    {
+        max-height: 200px;
+        margin-top: $line-height-computed;
+        margin-bottom: $line-height-computed;
+    }
 }
 
 .mcf-body
@@ -27,6 +27,10 @@
     color: $color-gray-lighter;
 }
 
+.mcf-navbar-header
+{
+    padding-bottom: 1rem;
+}
 
 .navbar-mcf
 {
@@ -34,21 +38,11 @@
     min-height: 7.5rem;
     background-color: $nav-bg;
 
-    .ion
-    {
-        font-size: 2rem;
-    }
-
     .nav-item
     {
         margin-left: 0.5rem;
         vertical-align: text-bottom;
         font-size: 1.5rem;
-    }
-
-    .navbar-header
-    {
-        padding-bottom: 1rem;
     }
 
     .mcf-navbar-collapse
@@ -77,57 +71,53 @@
     .navbar-toggle
     {
         @include transition-property (background-color);
-        @include transition-duration(0.25s);
-        @include transition-timing-function(ease-out);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-in-out);
         margin-right: 2rem;
         width: 4rem;
         height: 4rem;
-        border-color: #FFF;
+        border-color: $color-white;
         border-radius: 50%;
 
-        .icon-bar
+        & > .navbar-toggle-icon
         {
-            width: 18px;
-            background-color: #FFF;
+            color: $color-white;
         }
 
         &.focus,
         &:focus,
         &.hover,
-        &:hover
-        {
-            border-color: $brand-accent;
-            background-color: #0c454b;
-
-            .icon-bar
-            {
-                background-color: $brand-accent;
-            }
-        }
-
+        &:hover,
         &.active,
         &:active
         {
-            border-color: darken($brand-accent, 5%);
-            background-color: darken(#0c454b, 5%);
-
-            .icon-bar
-            {
-                background-color: darken($brand-accent, 5%);
-            }
+            border-color: darken($color-white, 5%);
+            background-color: darken($brand-accent, 5%);
         }
     }
 
-    .navbar-nav > li > a
+    .mcf-navbar > li > a
     {
-        color: #FFF;
+        @include transition-property (background-color);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-in-out);
+        color: $color-white;
 
+        &.focus,
+        &:focus,
         &.active,
         &:active,
         &.hover,
         &:hover
         {
-            color: $brand-accent;
+            color: $color-white;
+            background-color: $brand-accent;
         }
+
+        @media ( min-width: $screen-sm-min ) {
+            border-radius: 50%;
+        }
+
     }
 }
+
