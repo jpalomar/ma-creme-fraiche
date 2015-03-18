@@ -4,8 +4,14 @@
 // requires bourbon.io import lib
 @import 'bourbon';
 
+@import '../libs/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+// @import 'mcf-bootstrap';
+
 // load vars and mixins
-@import 'mcf-vars';
+@import 'vars/mcf-colors';
+@import 'vars/mcf-fonts';
+@import 'vars/mcf-icons';
+@import 'vars/mcf-brand';
 @import 'mcf-mixins';
 
 // load common global rules
