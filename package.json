@@ -13,13 +13,13 @@
   },
   "homepage": "https://github.com/jpalomar/ma-creme-fraiche",
   "devDependencies": {
-    "bower": "^1.3.12",
+    "bower": "^1.4.1",
     "grunt": "^0.4.5",
     "grunt-codekit": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-requirejs": "^0.4.4",
-    "load-grunt-config": "^0.16.0",
-    "load-grunt-tasks": "^3.1.0",
-    "time-grunt": "^1.1.0"
+    "load-grunt-config": "^0.17.1",
+    "load-grunt-tasks": "^3.2.0",
+    "time-grunt": "^1.2.1"
   }
 }
