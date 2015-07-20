@@ -22,16 +22,10 @@
     opacity: 0;     // init state
 }
 
-#id-front-splash {
-    min-height: 320px;
-}
-
-#id-svg-clock {
+.svg-clock {
     path {
         @include transition-property (fill);
         @include transition-duration(0.25s);
         @include transition-timing-function(ease-out);
-        // stroke-width:1px;
-        // stroke:#7f8c8d;
     }
 }

@@ -110,8 +110,7 @@ define([
             })
             .append('g')
             .attr({
-                'id': 'id-svg-clock-g',
-                'class': 'mcf-fade-in',
+                'class': 'svg-clock-g mcf-fade-in',
                 'transform': 'translate(' + _width / 2 + ',' + _height / 2 + ')',
             });
 
@@ -137,6 +136,7 @@ define([
     }
 
     function do_view_update_of_clock() {
+        console.log('do_view_update_of_clock');
         clearTimeout(timeout_reference);
         // empty
         d3_svg
@@ -176,7 +176,7 @@ define([
         do_format_day = d3_time_format('%a, %b %d');
         do_format_date = d3_time_format('%b %d');
         do_format_month = d3_time_format('%b %Y');
-        do_resize_svg_clock = _(do_view_update_of_clock).debounce(250);
+        do_resize_svg_clock = _(do_view_update_of_clock).debounce(200);
 
         d3_color = d3.scale.linear()
             .range(['hsl(99,22%,75%)', 'hsl(350,71%,67%)'])
@@ -191,8 +191,7 @@ define([
             ;
 
         d3_svg = d3.select(selector).append('svg')
-            .attr('id', 'id-svg-clock')
-            .classed('mcf-fade-in mcf-fade-in-longer',true)
+            .classed('svg-clock mcf-fade-in mcf-fade-in-longer',true)
             ;
 
         $tooltip = $($.fn.tooltip.Constructor.DEFAULTS.template)
@@ -201,6 +200,7 @@ define([
             ;
 
         $tooltip_content = $tooltip.find('.tooltip-inner');
+        do_resize_svg_clock();
 
         $(window)
             .on('resize.mcf.svg.clock', do_resize_svg_clock)
@@ -209,7 +209,7 @@ define([
     }
 
     var spacing = 0.09,
-        selector = '#id-front-splash',
+        selector = '.embed-front-splash',
         d3_time_format = d3.time.format,
         do_resize_svg_clock,
         data_model_of_time,
