@@ -5,9 +5,9 @@
 body
 {
     color: $brand-body-text;
-	font-family: $font-family-body;
-	-webkit-font-smoothing: antialiased;
-	-webkit-overflow-scrolling: touch;
+    font-family: $font-family-body;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 
 h1,
@@ -24,8 +24,8 @@ h6,
 .h6,
 .brand-name
 {
-	font-weight: 700;
-	font-family: $font-family-header;
+    font-weight: 700;
+    font-family: $font-family-header;
 }
 
 .brand-name
