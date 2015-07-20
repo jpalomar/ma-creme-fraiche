@@ -6,18 +6,22 @@ requirejs.config({
         // libs
         'jquery': [
             '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min',
+            'libs/jquery/dist/jquery.min',   // prod backup
             'libs/jquery/dist/jquery',   // backup
         ],
         'bootstrap': [
             '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
-            'libs/jquery/dist/jquery',   // backup
+            'libs/bootstrap-sass/assets/javascripts/bootstrap.min',   // prod backup
+            'libs/bootstrap-sass/assets/javascripts/bootstrap',   // backup
         ],
         'underscore': [
             '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
+            'libs/underscore/underscore-min', // prod backup
             'libs/underscore/underscore', // backup
         ],
         'd3': [
             '//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min',
+            'libs/d3/d3.min',                // prod backup
             'libs/d3/d3',                // backup
         ],
         'modernizr': [
