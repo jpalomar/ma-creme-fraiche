@@ -19,12 +19,12 @@
     "playground"
   ],
   "dependencies": {
-    "requirejs": "~2.1.18",
+    "requirejs": "~2.1.19",
     "modernizr": "~2.8.3",
     "bootstrap-sass": "~3.3.5",
     "ionicons": "~2.0.1",
     "jquery": "~2.1.4",
-    "d3": "~3.5.5",
+    "d3": "~3.5.6",
     "underscore": "~1.8.0"
   }
 }

@@ -5,15 +5,15 @@ requirejs.config({
     'paths': {
         // libs
         'jquery': [
-            '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min',
+            '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min',
             'libs/jquery/dist/jquery',   // backup
         ],
         'bootstrap': [
-            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min',
+            '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
             'libs/jquery/dist/jquery',   // backup
         ],
         'underscore': [
-            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min',
+            '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
             'libs/underscore/underscore', // backup
         ],
         'd3': [
