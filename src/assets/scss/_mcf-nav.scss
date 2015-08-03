@@ -37,6 +37,7 @@
     padding-top: 0.9rem;
     min-height: 7.5rem;
     background-color: $nav-bg;
+    border-color: $nav-accent;
 
     .nav-item
     {
@@ -47,7 +48,7 @@
 
     .mcf-navbar-collapse
     {
-        border-color: $color-aqua;
+        border-color: $nav-accent;
         border-top-width: 0.2rem;
         border-bottom-width: 0.5rem;
         border-bottom-style: solid;

@@ -6,7 +6,8 @@ $brand-body-text:       $color-black;
 
 $brand-accent:       $color-salmon;
 
-$nav-bg:       $color-yale-blue;
+$nav-bg:       rgba($color-gray-darker, 0.95);
+$nav-accent:       rgba($brand-accent, 0.9);
 
 $brand-color-1: $color-salmon;
 $brand-color-2: $color-pink;
