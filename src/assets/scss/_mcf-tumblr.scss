@@ -13,10 +13,9 @@
 
 .mcf-blog
 {
-	background-color: #ffffff;
-	color: #555;
-	font-weight: 400;
-	font-size: 14px;
+	background-color: $color-white;
+	color: $brand-body-text;
+	font-size: $font-size-base;
 
 /*  Titles
 ================== */
@@ -37,7 +36,7 @@ p {
 /*  LINKS
 ================== */
 a {
-	color: #105B63;
+	color: $brand-links-color;
 	word-wrap: break-word;
 }
 a,
@@ -51,7 +50,7 @@ a:after
 a:hover,
 a:focus {
 	outline: 0;
-	color: #A33F2B;
+	color: $brand-accent;
 	text-decoration: none;
 }
 
@@ -71,10 +70,10 @@ hr {
 	padding-bottom: 8rem;
 }
 .bg-tumblr-alt {
-	background-color: #F0F0F0;
+	background-color: $color-gray-lighter;
 }
 .bg-tumblr-odd {
-	background-color: #fff;
+	background-color: $color-white;
 }
 
 /* Blog Date*/
@@ -106,10 +105,10 @@ hr {
 }
 
 /* glyphicon Configuration */
-.glyphicon {
-	color: #1abc9c;
-	font-size: 40px;
-}
+// .glyphicon {
+// 	color: #1abc9c;
+// 	font-size: 40px;
+// }
 ol.notes {
 	list-style: none;
 	letter-spacing: 0.05rem;

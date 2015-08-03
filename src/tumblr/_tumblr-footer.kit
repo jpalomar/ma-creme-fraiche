@@ -1,7 +1,7 @@
-<div id="foot-clan">
+<footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 {block:IfContactHeading}
                 <h4>{text:Contact Heading}</h4> {/block:IfContactHeading}
                 <p>
@@ -11,9 +11,8 @@
                     <br /> {/block:IfContactEmail}
                 </p>
             </div>
-            <!-- /col-lg-4 -->
 
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 {block:IfSocialHeading}
                 <h4>{text:Social Heading}</h4>
                 {/block:IfSocialHeading}
@@ -28,16 +27,13 @@
                     <br/> {/block:IfFacebookUsername}
                 </p>
             </div>
-            <!-- /col-lg-4 -->
 
-            <div class="col-lg-4">
-                <h4>{Title}</h4>
+            <div class="col-md-4">
+                <h5 class="footer-brand brand-name">{Title}</h5>
             </div>
-            <!-- /col-lg-4 -->
 
         </div>
         <!-- /.row -->
     </div>
     <!-- /.container -->
-</div>
-<!-- /#foot-clan -->
+</footer>
