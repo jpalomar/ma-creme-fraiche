@@ -4,10 +4,29 @@
 
 @import 'bourbon';
 
-@import 'mcf-colors';
+// get bootstrap variables
+@import '../libs/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+
+// load vars and mixins
+@import 'vars/mcf-colors';
+@import 'vars/mcf-fonts';
+@import 'vars/mcf-icons';
+@import 'vars/mcf-brand';
+@import 'mcf-mixins';
+
+// load common global rules
+@import 'mcf-resets';
+@import 'mcf-general';
 @import 'mcf-typography';
-@import 'no-js';
+@import 'mcf-iconography';
+
+// base components
 @import 'mcf-nav';
+
+// blog specific
 @import 'mcf-blog-pager';
 @import 'mcf-tumblr';
 
+// errors
+@import 'no-js';
+@import 'old-ie';
